@@ -7,14 +7,14 @@ const {
 } = require('discord.js');
 
 
-const Canvas = require('canvas');
+//const Canvas = require('canvas');
 
 client.on('ready', () => {
     console.log("Ready to welcome some people!")
     client.user.setActivity('with 2ez')
 });
 
-
+/*
 
 const applyText = (canvas, text) => {
     const ctx = canvas.getContext('2d');
@@ -98,6 +98,8 @@ client.on('message', message => {
         client.emit('guildMemberAdd', message.member);
     }
 });
+
+*/
 
 
 
