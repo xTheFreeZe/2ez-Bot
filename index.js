@@ -112,6 +112,7 @@ client.on('guildMemberAdd', member => {
 
     const content = [
         `**Remember to read the rules in <#753238962050695228>.**`,
+        ` `,
         `*You can assign yourself the roles you want in <#822811391240962048>*`
 
     ]
