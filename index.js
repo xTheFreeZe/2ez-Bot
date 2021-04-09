@@ -104,7 +104,7 @@ client.on('message', message => {
 
 
 
-client.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', async member => {
 
     const channel = client.channels.cache.get('589929952837894144');
 
