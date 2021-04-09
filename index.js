@@ -123,8 +123,7 @@ client.on('guildMemberAdd', member => {
         .setImage('https://cdn.discordapp.com/attachments/821393051561361493/830127085414252565/2ez_banner_3.png')
         .setColor('RANDOM')
 
-    channel.send(`Welcome to the Server ${member}`)
-    channel.send(welcomeembed);
+    channel.send(`Welcome to the Server ${member}`, welcomeembed);
 
 
 })
