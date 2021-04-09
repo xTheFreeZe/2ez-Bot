@@ -118,12 +118,12 @@ client.on('guildMemberAdd', member => {
     ]
 
     const welcomeembed = new MessageEmbed()
-        .setTitle(`Welcome to the 2ez Community Server`)
+        .setTitle(`Welcome to the 2ez Community Server!`)
         .setDescription(content)
         .setImage('https://cdn.discordapp.com/attachments/821393051561361493/830127085414252565/2ez_banner_3.png')
         .setColor('RANDOM')
 
-    channel.send(`Welcome to the Server ${member}`, welcomeembed);
+    channel.send(`Welcome to the Server ${member}!`, welcomeembed);
 
 
 })
