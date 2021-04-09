@@ -106,14 +106,14 @@ client.on('message', message => {
 
 client.on('guildMemberAdd', member => {
 
-    const channel = client.channels.cache.get('713356214536503402');
+    const channel = client.channels.cache.get('589929952837894144');
 
     if (!channel) return console.log('welcome returned.')
 
     const content = [
-        `**Remember to read the rules in <#753238962050695228>.**`,
+        `Remember to read the rules in <#753238962050695228>.`,
         ` `,
-        `*You can assign yourself the roles you want in <#822811391240962048>*`
+        `You can assign yourself the roles you want in <#822811391240962048>`
 
     ]
 
