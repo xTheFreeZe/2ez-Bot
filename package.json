@@ -9,7 +9,6 @@
   "author": "Marwin",
   "license": "ISC",
   "dependencies": {
-    "canvas": "2.6.1",
     "discord.js": "^12.5.3"
   }
 }
