@@ -106,7 +106,7 @@ client.on('message', message => {
 
 client.on('guildMemberAdd', async member => {
 
-    const channel = client.channels.cache.get('589929952837894144');
+    const channel = client.channels.cache.get('830088794396033105');
 
     if (!channel) return console.log('welcome returned.')
 
@@ -117,10 +117,18 @@ client.on('guildMemberAdd', async member => {
 
     ]
 
+    const pictures = [
+        'https://cdn.discordapp.com/attachments/681060754564448257/830346710404431892/2ez_banner_1.png',
+        'https://cdn.discordapp.com/attachments/681060754564448257/830346717329096714/2ez_banner_2.png',
+        'https://cdn.discordapp.com/attachments/681060754564448257/830346731157192724/2ez_banner_3.png'
+    ]
+
+    const randompicture = pictures[Math.floor(Math.random() * pictures.length)]
+
     const welcomeembed = new MessageEmbed()
         .setTitle(`Welcome to the 2ez Community Server!`)
         .setDescription(content)
-        .setImage('https://cdn.discordapp.com/attachments/821393051561361493/830127085414252565/2ez_banner_3.png')
+        .setImage(randompicture)
         .setColor('RANDOM')
 
     channel.send(`Welcome to the Server ${member}!`, welcomeembed);
