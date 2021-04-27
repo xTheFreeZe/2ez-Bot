@@ -106,7 +106,7 @@ client.on('message', message => {
 
 client.on('guildMemberAdd', async member => {
 
-    const channel = client.channels.cache.get('589929952837894144');
+    const channel = client.channels.cache.get('730112158339432533');
 
     if (!channel) return console.log('welcome returned.')
 
