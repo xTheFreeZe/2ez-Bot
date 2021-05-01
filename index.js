@@ -106,14 +106,28 @@ client.on('message', message => {
 
 client.on('guildMemberAdd', async member => {
 
-    const channel = client.channels.cache.get('730112158339432533');
+    const errorembed = new MessageEmbed()
+        .setDescription('<:2ez_No:837430657667825677> An Error occurred!')
+        .setColor('RED')
 
-    if (!channel) return console.log('welcome returned.')
+    const reembed = new MessageEmbed()
+        .setDescription(`${member}`)
+
+
+    const embed = new MessageEmbed()
+        .setDescription(`Please welcome **${member}** to the Server <:pogU:836244303034318908>`)
+        .setColor('RANDOM')
+
+    const welcomechannel = client.channels.cache.get('713356214536503402');
+
+    const channel = client.channels.cache.get('830008624369238076');
+
+    if (!channel) return console.log('welcome returned.');
 
     const content = [
         `Remember to read the rules in <#753238962050695228>.`,
         ` `,
-        `You can assign yourself the roles you want in <#822811391240962048>`
+        `You can assign yourself the roles you want in <#822811391240962048>!`
 
     ]
 
@@ -123,7 +137,16 @@ client.on('guildMemberAdd', async member => {
         'https://cdn.discordapp.com/attachments/681060754564448257/830346731157192724/2ez_banner_3.png'
     ]
 
+    if (!pictures) console.log('welcome returned! No Links found');
+
     const randompicture = pictures[Math.floor(Math.random() * pictures.length)]
+
+    if (!randompicture) {
+
+        console.log('An Error occurred! No random pictures were found!')
+        return channel.send(errorembed), welcomechannel.send(embed)
+
+    }
 
     const welcomeembed = new MessageEmbed()
         .setTitle(`Welcome to the 2ez Community Server!`)
@@ -132,6 +155,7 @@ client.on('guildMemberAdd', async member => {
         .setColor('RANDOM')
 
     channel.send(`Welcome to the Server ${member}!`, welcomeembed);
+    welcomechannel.send(embed);
 
 
 })
