@@ -101,23 +101,6 @@ client.on('message', message => {
     }
 });
 
-client.on('message', message => {
-    if (message.content === '*error') {
-
-        if (message.author.id !== '420277395036176405') {
-            return console.log('Returned!');
-        }
-
-        const welcomechannel = client.channels.cache.get('585883817458401342');
-
-        welcomechannel.send('An unexpected error occurred! `Value is not snowflake`');
-        welcomechannel.send('check the console for more info');
-
-    }
-});
-
-
-
 
 
 
