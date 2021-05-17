@@ -97,6 +97,9 @@ client.on('guildMemberAdd', async member => {
 
 client.on('message', message => {
     if (message.content === '*join') {
+
+        if (message.author.id !== '420277395036176405') return;
+
         client.emit('guildMemberAdd', message.member);
     }
 });
@@ -139,7 +142,8 @@ client.on('guildMemberAdd', async member => {
 
     if (!pictures) console.log('welcome returned! No Links found');
 
-    const randompicture = pictures[Math.floor(Math.random() * pictures.length)]
+    const randompicture = pictures[Math.floor(Math.random() * pictures.length)];
+
 
     if (!randompicture) {
 
@@ -154,7 +158,8 @@ client.on('guildMemberAdd', async member => {
         .setImage(randompicture)
         .setColor('RANDOM')
 
-    channel.send(`Welcome to the Server ${member}!`, welcomeembed);
+    await channel.send(`Welcome to the Server ${member}!`, welcomeembed);
+
     welcomechannel.send(embed);
 
 
