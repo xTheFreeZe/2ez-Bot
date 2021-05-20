@@ -10,8 +10,9 @@ const {
 //const Canvas = require('canvas');
 
 client.on('ready', () => {
+    const channel = client.channels.cache.get('830062427776221195');
     console.log("Ready to welcome some people!")
-    client.user.setActivity('with 2ez')
+    client.user.setActivity(`with ${channel.guild.memberCount} people!`)
 });
 
 /*
