@@ -118,9 +118,9 @@ client.on('guildMemberAdd', async member => {
         .setDescription(`${member}`)
 
 
-    const welcomechannel = client.channels.cache.get('821393051561361493');
+    const welcomechannel = client.channels.cache.get('585883817458401342');
 
-    const channel = client.channels.cache.get('830062427776221195');
+    const channel = client.channels.cache.get('589929952837894144');
 
     if (!channel) return console.log('welcome returned.');
     if (!welcomechannel) return console.log('no welcome channel found!');
