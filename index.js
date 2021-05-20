@@ -125,6 +125,7 @@ client.on('guildMemberAdd', async member => {
 
     const embedcontent = [
         `Please welcome **${member.displayName}** to the Server <:pogU:836244303034318908>`,
+        " ",
         `**${channel.guild.name}** now has **${channel.guild.memberCount}** members`
     ]
 
