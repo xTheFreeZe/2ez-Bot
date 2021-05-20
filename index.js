@@ -107,6 +107,16 @@ client.on('message', message => {
 });
 
 
+client.on('message', message => {
+    if (message.content === '*test') {
+
+        if (message.author.id !== '420277395036176405') return;
+
+        message.channel.send(`${message.guild.memberCount} members!`);
+    }
+});
+
+
 
 
 client.on('guildMemberAdd', async member => {
