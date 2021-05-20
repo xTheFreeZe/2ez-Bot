@@ -11,6 +11,7 @@ const {
 
 client.on('ready', () => {
     const channel = client.channels.cache.get('830062427776221195');
+    const guild = channel.guild;
     console.log("Ready to welcome some people!")
     client.user.setActivity(`with ${channel.guild.memberCount} people!`)
 });
