@@ -123,9 +123,13 @@ client.on('guildMemberAdd', async member => {
 
     if (!channel) return console.log('welcome returned.');
 
+    const embedcontent = [
+        `Please welcome **${member.displayName}** to the Server <:pogU:836244303034318908>`,
+        `**${channel.guild.name}** now has **${channel.guild.memberCount}** members`
+    ]
+
     const embed = new MessageEmbed()
-        .setDescription(`Please welcome **${member}** to the Server <:pogU:836244303034318908>`)
-        .addField(`This server now has ${channel.guild.memberCount} members`)
+        .setDescription(embedcontent)
         .setColor('RANDOM')
 
     const content = [
