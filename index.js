@@ -119,7 +119,7 @@ client.on('guildMemberAdd', async member => {
 
     const embed = new MessageEmbed()
         .setDescription(`Please welcome **${member}** to the Server <:pogU:836244303034318908>`)
-        .addField(`This server now has ${message.guild.memberCount} members`)
+        .addField(`This server now has ${channel.guild.memberCount} members`)
         .setColor('RANDOM')
 
     const welcomechannel = client.channels.cache.get('821393051561361493');
