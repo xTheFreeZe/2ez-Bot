@@ -117,16 +117,16 @@ client.on('guildMemberAdd', async member => {
         .setDescription(`${member}`)
 
 
-    const embed = new MessageEmbed()
-        .setDescription(`Please welcome **${member}** to the Server <:pogU:836244303034318908>`)
-        .addField(`This server now has ${channel.guild.memberCount} members`)
-        .setColor('RANDOM')
-
     const welcomechannel = client.channels.cache.get('821393051561361493');
 
     const channel = client.channels.cache.get('830062427776221195');
 
     if (!channel) return console.log('welcome returned.');
+
+    const embed = new MessageEmbed()
+        .setDescription(`Please welcome **${member}** to the Server <:pogU:836244303034318908>`)
+        .addField(`This server now has ${channel.guild.memberCount} members`)
+        .setColor('RANDOM')
 
     const content = [
         `Remember to read the rules in <#753238962050695228>.`,
