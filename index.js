@@ -121,9 +121,9 @@ client.on('guildMemberAdd', async member => {
         .setDescription(`Please welcome **${member}** to the Server <:pogU:836244303034318908>`)
         .setColor('RANDOM')
 
-    const welcomechannel = client.channels.cache.get('585883817458401342');
+    const welcomechannel = client.channels.cache.get('821393051561361493');
 
-    const channel = client.channels.cache.get('589929952837894144');
+    const channel = client.channels.cache.get('830062427776221195');
 
     if (!channel) return console.log('welcome returned.');
 
