@@ -7,11 +7,11 @@ const {
 } = require('discord.js');
 
 
+
 //const Canvas = require('canvas');
 
 client.on('ready', () => {
-    const channel = client.channels.cache.get('830062427776221195');
-    const guild = channel.guild;
+    const channel = client.channels.cache.get('589929952837894144');
     console.log("Ready to welcome some people!")
     client.user.setActivity(`with ${channel.guild.memberCount} people!`)
 });
