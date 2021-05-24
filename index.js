@@ -112,7 +112,7 @@ client.on('message', message => {
 
         if (message.author.id !== '420277395036176405') return;
 
-        message.channel.send(`${message.guild.memberCount} members!`);
+        message.channel.send(`${message.guild.memberCount} members! Local online!`);
     }
 });
 
@@ -129,9 +129,9 @@ client.on('guildMemberAdd', async member => {
         .setDescription(`${member}`)
 
 
-    const welcomechannel = client.channels.cache.get('585883817458401342');
+    const welcomechannel = client.channels.cache.get('730112158339432533');
 
-    const channel = client.channels.cache.get('589929952837894144');
+    const channel = client.channels.cache.get('730112256943325254');
 
     if (!channel) return console.log('welcome returned.');
     if (!welcomechannel) return console.log('no welcome channel found!');
