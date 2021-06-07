@@ -6,6 +6,8 @@ const {
     MessageEmbed
 } = require('discord.js');
 
+const PREFIX = '*';
+
 
 
 //const Canvas = require('canvas');
