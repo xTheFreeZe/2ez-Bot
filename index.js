@@ -119,6 +119,21 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+    if (message.content === '*speak') {
+
+        if (message.author.id !== '420277395036176405') return;
+
+        let args = message.content.substring(PREFIX.length).split(" ");
+        let msgArgs = args.slice(1).join(" ");
+
+
+        message.delete();
+
+        message.channel.send(msgArgs);
+    }
+});
+
 client.on('guildMemberAdd', async member => {
 
     const errorembed = new MessageEmbed()
