@@ -130,13 +130,15 @@ client.on('message', message => {
 
             if (message.author.id !== '420277395036176405') return;
 
+            const welcomechannel = client.channels.cache.get('585883817458401342');
+
             let args = message.content.substring(PREFIX.length).split(" ");
             let msgArgs = args.slice(1).join(" ");
 
 
             message.delete();
 
-            message.channel.send(msgArgs);
+            welcomechannel.send(msgArgs);
 
 
 
