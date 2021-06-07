@@ -119,20 +119,33 @@ client.on('message', message => {
     }
 });
 
-client.on('message', message => {
-    if (message.content === '*speak') {
 
-        if (message.author.id !== '420277395036176405') return;
+client.on('message', msg => {
+    let args = msg.content.substring(PREFIX.length).split(" ");
+    let author = msg.author
 
-        let args = message.content.substring(PREFIX.length).split(" ");
-        let msgArgs = args.slice(1).join(" ");
+    switch (args[0]) {
+        case "speak":
+
+            if (message.author.id !== '420277395036176405') return;
+
+            let args = message.content.substring(PREFIX.length).split(" ");
+            let msgArgs = args.slice(1).join(" ");
 
 
-        message.delete();
+            message.delete();
 
-        message.channel.send(msgArgs);
+            message.channel.send(msgArgs);
+
+
+
+
+            break;
+
+
+
     }
-});
+})
 
 client.on('guildMemberAdd', async member => {
 
