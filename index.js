@@ -191,7 +191,7 @@ client.on('guildMemberAdd', async member => {
 
     welcomechannel.send(embed);
 
-    if (`${channel.guild.memberCount}` == 991) welcomechannel.send('Just testing something!');
+    if (`${channel.guild.memberCount}` == 1000) welcomechannel.send(kembed);
 
 
 })
