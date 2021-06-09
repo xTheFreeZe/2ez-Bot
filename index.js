@@ -117,38 +117,12 @@ client.on('message', message => {
 
         message.delete();
 
-        message.channel.send(`Bot is online again! ${message.guild.memberCount} Members!`);
+        const channel = client.channels.cache.get('589929952837894144');
+
+        if (`${channel.guild.memberCount}` == 991) welcomechannel.send('Just testing something!');
     }
 });
 
-
-client.on('message', message => {
-    let args = message.content.substring(PREFIX.length).split(" ");
-
-    switch (args[0]) {
-        case "speak":
-
-            if (message.author.id !== '420277395036176405') return;
-
-            const welcomechannel = client.channels.cache.get('585883817458401342');
-
-            let args = message.content.substring(PREFIX.length).split(" ");
-            let msgArgs = args.slice(1).join(" ");
-
-
-            message.delete();
-
-            welcomechannel.send(msgArgs);
-
-
-
-
-            break;
-
-
-
-    }
-})
 
 client.on('guildMemberAdd', async member => {
 
@@ -158,6 +132,12 @@ client.on('guildMemberAdd', async member => {
 
     const reembed = new MessageEmbed()
         .setDescription(`${member}`)
+
+    const kembed = new MessageEmbed()
+        .setTitle('2ez just Hit 1000 Members!')
+        .setColor('GREEN')
+        .setDescription('<:pogU:836244303034318908> <:pogU:836244303034318908> Huge! <:pogU:836244303034318908> <:pogU:836244303034318908>')
+        .setTimestamp()
 
 
     const welcomechannel = client.channels.cache.get('585883817458401342');
@@ -212,6 +192,8 @@ client.on('guildMemberAdd', async member => {
     await channel.send(`Welcome to the Server ${member}!`, welcomeembed);
 
     welcomechannel.send(embed);
+
+    if (`${channel.guild.memberCount}` == 991) welcomechannel.send('Just testing something!');
 
 
 })
