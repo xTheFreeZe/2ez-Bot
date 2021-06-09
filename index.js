@@ -118,6 +118,7 @@ client.on('message', message => {
         message.delete();
 
         const channel = client.channels.cache.get('589929952837894144');
+        const welcomechannel = client.channels.cache.get('585883817458401342');
 
         if (`${channel.guild.memberCount}` == 991) welcomechannel.send('Just testing something!');
     }
