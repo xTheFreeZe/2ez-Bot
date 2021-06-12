@@ -121,6 +121,16 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+    if (message.content === '*members') {
+
+        const channel = client.channels.cache.get('589929952837894144');
+        const welcomechannel = client.channels.cache.get('585883817458401342');
+
+        message.channel.send(`${message.guild.name} has ${message.guild.memberCount} members!`);
+    }
+});
+
 
 client.on('guildMemberAdd', async member => {
 
