@@ -122,6 +122,19 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+    if (message.content.includes("sniff")) {;
+        message.react('<:Sniff_SWAG:766369729338146846>')
+    }
+});
+
+client.on('message', message => {
+    if (message.content.includes("Sniff")) {;
+        message.react('<:Sniff_SWAG:766369729338146846>')
+    }
+});
+
+
+client.on('message', message => {
     if (message.content === '*members') {
 
         const channel = client.channels.cache.get('589929952837894144');
