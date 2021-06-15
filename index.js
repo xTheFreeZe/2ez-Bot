@@ -122,6 +122,18 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+    if (message.channel.id == '585883817458401342') {
+        
+        if (message.author.id == '317630435008053248') {
+            
+            message.react('<:Sniff_SWAG:766369729338146846>');
+
+        }
+        
+    }
+})
+
+client.on('message', message => {
     if (message.content.includes("sniff")) {
         ;
         message.react('<:Sniff_SWAG:766369729338146846>')
