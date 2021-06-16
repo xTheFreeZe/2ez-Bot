@@ -1,5 +1,6 @@
 const {
-    MessageEmbed
+    MessageEmbed,
+    MessageFlags
 } = require('discord.js');
 
 
@@ -64,7 +65,11 @@ module.exports = {
                     dynamic: true
                 }))
 
-            return member.roles.add(roleName).then(() => message.channel.send(embed));
+            return member.roles.add(roleName).catch((e) => {
+
+                message.channel.send('An Error occured!' + " " + e);
+
+            }).then(() => message.channel.send(embed));
 
 
 
