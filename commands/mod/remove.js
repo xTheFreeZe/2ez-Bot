@@ -11,7 +11,7 @@ module.exports = {
 
         let useembed = new MessageEmbed()
             .setTitle('Incorrect Usage')
-            .setDescription('Its `<username | user id> <role name | id>')
+            .setDescription('Its `<username | user id> <role name>')
             .setColor('RED')
 
         let STTpermissions = new MessageEmbed()
@@ -24,7 +24,7 @@ module.exports = {
             .setColor('RED')
 
         let norole = new MessageEmbed()
-            .setDescription('Please mention a role or a role ID!')
+            .setDescription('Please mention a role!')
             .setColor('RED')
 
 
