@@ -8,11 +8,6 @@ module.exports = {
 
     run: async (client, message, args) => {
 
-        let permsembed = new MessageEmbed()
-            .setDescription(`<:STT_no:778545452218974209> You can't use that ${message.author.username}!`)
-            .addField("Error", 'Missing `MANAGE_ROLES`')
-            .setColor("RED")
-
         let useembed = new MessageEmbed()
             .setTitle('Incorrect Usage')
             .setDescription('Its `<username | user id> <role name | id>')
@@ -24,11 +19,16 @@ module.exports = {
             .setColor('RED')
 
 
-        if (!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(permsembed);
 
         if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
 
             return message.channel.send(STTpermissions);
+
+        }
+
+        if (!message.channel.id) {
+
+            return;
 
         }
 
