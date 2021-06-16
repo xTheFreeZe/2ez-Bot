@@ -30,7 +30,7 @@ client.commands = new Collection();
 
 client.on('message', async message => {
 
-    let PREFIX = '^';
+    let PREFIX = '*';
 
     if (!message.guild) return;
     if (!message.content.startsWith(PREFIX)) return;
