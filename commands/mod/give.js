@@ -35,7 +35,7 @@ module.exports = {
 
         }
 
-        if (!message.channel.id == '587956575315034114') {
+        if (!message.channel.id === '587956575315034114') {
 
             return;
 
