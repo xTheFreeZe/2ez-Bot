@@ -65,7 +65,7 @@ module.exports = {
                     dynamic: true
                 }))
 
-            return member.roles.delete(roleName).catch((e) => {
+            return member.roles.remove(roleName).catch((e) => {
 
                 message.channel.send('An Error occured!' + " " + e);
 
