@@ -18,6 +18,35 @@ client.on('ready', () => {
     client.user.setActivity(`with ${channel.guild.memberCount} people!`)
 });
 
+const {
+    Collection
+} = require("discord.js");
+
+client.commands = new Collection();
+
+["command"].forEach(handler => {
+    require(`./handler/${handler}`)(client);
+});
+
+client.on('message', async message => {
+
+    let PREFIX = '^';
+
+    if (!message.guild) return;
+    if (!message.content.startsWith(PREFIX)) return;
+
+    const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
+    const cmd = args.shift().toLowerCase();
+
+    if (cmd.length === 0) return;
+
+    let command = client.commands.get(cmd);  
+
+    if (command)
+        command.run(client, message, args);
+
+})
+
 /*
 
 const applyText = (canvas, text) => {
@@ -129,6 +158,8 @@ client.on('message', message => {
             message.react('<:Sniff_SWAG:766369729338146846>');
 
         }
+
+        return;
         
     }
 })
