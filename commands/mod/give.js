@@ -58,7 +58,7 @@ module.exports = {
 
 
             const embed = new MessageEmbed()
-                .setTitle(`Role Name: ${roleName.name}`)
+                .setTitle(`${roleName.name} was transferred!`)
                 .setDescription(`${roleName} was given to ${member.user}`)
                 .setColor('f3f3f3')
                 .setThumbnail(member.user.displayAvatarURL({
@@ -69,7 +69,11 @@ module.exports = {
 
                 message.channel.send('An Error occured!' + " " + e);
 
-                return;
+                embed.setTitle('ERROR')
+                embed.setDescription('>' + " " + e)
+                embed.setColor('RED')
+
+    
 
             }).then(() => message.channel.send(embed));
 
