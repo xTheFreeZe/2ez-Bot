@@ -259,14 +259,6 @@ client.on('guildMemberAdd', async member => {
 
     welcomechannel.send(embed);
 
-    if (`${channel.guild.memberCount}` == 1000) welcomechannel.send(kembed);
-    if (`${channel.guild.memberCount}` == 1000) welcomechannel.send(kembed);
-    if (`${channel.guild.memberCount}` == 1000) welcomechannel.send(kembed);
-    if (`${channel.guild.memberCount}` == 1000) welcomechannel.send(kembed);
-    if (`${channel.guild.memberCount}` == 1000) welcomechannel.send(kembed);
-    if (`${channel.guild.memberCount}` == 1000) welcomechannel.send(kembed);
-    if (`${channel.guild.memberCount}` == 1000) welcomechannel.send(kembed);
-    if (`${channel.guild.memberCount}` == 1000) welcomechannel.send(kembed);
 
 
 })
