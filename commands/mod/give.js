@@ -18,6 +18,14 @@ module.exports = {
             .addField('Needed', '`MANAGE_ROLES`')
             .setColor('RED')
 
+        let nomember = new MessageEmbed()
+            .setDescription('Please mention someone, or provide an ID!')
+            .setColor('RED')
+
+        let norole = new MessageEmbed()
+            .setDescription('Please mention a role or a role ID!')
+            .setColor('RED')
+
 
 
         if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
@@ -39,6 +47,9 @@ module.exports = {
 
             const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
             const roleName = message.guild.roles.cache.find(r => (r.name === args[1].toString()) || (r.id === args[1].toString().replace(/[^\w\s]/gi, '')));
+
+            if (!member) return message.channel.send(nomember);
+            if (!roleName) return message.channel.send(norole);
 
             const alreadyHasRole = member._roles.includes(roleName.id);
 
