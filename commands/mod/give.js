@@ -14,7 +14,7 @@ module.exports = {
             .setColor('RED')
 
         let STTpermissions = new MessageEmbed()
-            .setDescription('<:STT_no:778545452218974209> Please give the Bot Permissions to do this!')
+            .setDescription('Please give the Bot Permissions to do this!')
             .addField('Needed', '`MANAGE_ROLES`')
             .setColor('RED')
 
@@ -26,7 +26,7 @@ module.exports = {
 
         }
 
-        if (!message.channel.id) {
+        if (!message.channel.id == '587956575315034114') {
 
             return;
 
