@@ -27,6 +27,10 @@ module.exports = {
             .setDescription('Please mention a role!')
             .setColor('RED')
 
+        let rolefirst = new MessageEmbed()
+            .setDescription('Please dont put the role in the front! Its `<username | user id> <role name> !')
+            .setColor('RED')
+
 
 
         if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
@@ -44,6 +48,8 @@ module.exports = {
 
             const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
             const roleName = message.guild.roles.cache.find(r => (r.name === args[1].toString()) || (r.id === args[1].toString().replace(/[^\w\s]/gi, '')));
+
+            if (args[0] = roleName) return message.channel.send()
 
             if (!member) return message.channel.send(nomember);
             if (!roleName) return message.channel.send(norole);
