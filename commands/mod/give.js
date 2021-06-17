@@ -85,7 +85,6 @@ module.exports = {
                 .setTitle('Error')
                 .setDescription("An unexpected Error occured! If you see this, please contact the Developer!")
                 .addField('Make sure', 'you mentioned a role!')
-                .addField('Make sure', 'you mentioned a person!')
                 .addField('Developer Info', e)
                 .setColor('RED')
 
