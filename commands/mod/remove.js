@@ -61,6 +61,8 @@ module.exports = {
                 .setTitle(`${roleName.name} was removed!`)
                 .setDescription(`${roleName} was removed from ${member.user}`)
                 .setColor('f3f3f3')
+                .setTimestamp()
+                .setFooter(`${message.author.user}`)
                 .setThumbnail(member.user.displayAvatarURL({
                     dynamic: true
                 }))

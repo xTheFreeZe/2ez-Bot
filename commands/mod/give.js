@@ -61,6 +61,8 @@ module.exports = {
                 .setTitle(`${roleName.name} was transferred!`)
                 .setDescription(`${roleName} was given to ${member.user}`)
                 .setColor('f3f3f3')
+                .setTimestamp()
+                .setFooter(`${message.author.user}`)
                 .setThumbnail(member.user.displayAvatarURL({
                     dynamic: true
                 }))
