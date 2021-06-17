@@ -46,9 +46,9 @@ module.exports = {
 
 
             if (!member) return message.channel.send(nomember);
-            //if (!roleName || roleName.id) return message.channel.send(norole);
+            if (!roleName) return message.channel.send(norole);
 
-            const alreadyHasRole = member._roles.includes(roleName);
+            const alreadyHasRole = member._roles.includes(roleName.id);
 
             if (alreadyHasRole) return message.channel.send('User already has that role');
 
