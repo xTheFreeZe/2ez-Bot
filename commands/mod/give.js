@@ -48,7 +48,7 @@ module.exports = {
             if (!member) return message.channel.send(nomember);
             //if (!roleName || roleName.id) return message.channel.send(norole);
 
-            const alreadyHasRole = member._roles.includes(roleName.id);
+            const alreadyHasRole = member._roles.includes(roleName);
 
             if (alreadyHasRole) return message.channel.send('User already has that role');
 
@@ -87,7 +87,7 @@ module.exports = {
                 .addField('Developer Info', e)
                 .setColor('RED')
 
-            return message.channel.send(errorembed).then(() => console.log('An Error occured!'));
+            return message.channel.send(errorembed).then(() => console.log(e));
         }
 
 
