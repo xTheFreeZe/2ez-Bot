@@ -47,7 +47,7 @@ module.exports = {
             const roleName = message.guild.roles.cache.find(r => (r.name === args[1].toString()) || (r.id === args[1].toString().replace(/[^\w\s]/gi, '')));
 
             if (!member) return message.channel.send(nomember);
-            if (!roleName) return message.channel.send(norole);
+            //if (!roleName) return message.channel.send(norole);
 
             const alreadyHasRole = member._roles.includes(roleName.id);
 
@@ -81,7 +81,14 @@ module.exports = {
 
         } catch (e) {
 
-            return message.channel.send('Error').then(() => console.log(e));
+            const errorembed = new MessageEmbed()
+
+                .setTitle('Error')
+                .setDescription("An unexpected Error occured! If you see this, please contact the Developer!")
+                .addField('Developer Info', e)
+                .setColor('RED')
+
+            return message.channel.send(errorembed).then(() => console.log('An Error occured!'));
         }
 
 
