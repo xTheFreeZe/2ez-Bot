@@ -35,11 +35,7 @@ module.exports = {
 
         }
 
-        if (!message.channel.id === '587956575315034114') {
-
-            return;
-
-        }
+        if (!message.channel.id == '587956575315034114') return;
 
         if (!args[0] || !args[1]) return message.channel.send(useembed);
 
@@ -62,7 +58,7 @@ module.exports = {
                 .setDescription(`${roleName} was given to ${member.user}`)
                 .setColor('f3f3f3')
                 .setTimestamp()
-                .setFooter(`${message.author.user}`)
+                .setFooter(`${message.author.username}`)
                 .setThumbnail(member.user.displayAvatarURL({
                     dynamic: true
                 }))
