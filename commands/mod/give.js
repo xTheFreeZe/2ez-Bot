@@ -88,7 +88,7 @@ module.exports = {
                 .addField('Developer Info', e)
                 .setColor('RED')
 
-            return message.channel.send(errorembed).then(() => console.log(e));
+            return message.channel.send(errorembed).then(() => console.log('An Error occured. Check the error message!'));
         }
 
 
