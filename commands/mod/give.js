@@ -27,6 +27,10 @@ module.exports = {
             .setDescription('Please mention a role!')
             .setColor('RED')
 
+        let memberfirst = new MessageEmbed()
+            .setDescription('Please mention a member as your first argument!')
+            .setColor('RED')
+
 
         if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
 
@@ -46,6 +50,7 @@ module.exports = {
 
 
             if (!member) return message.channel.send(nomember);
+            if (!args[0] == member) return message.channel.send(memberfirst)
             //if (!roleName) return message.channel.send(norole);
 
             const alreadyHasRole = member._roles.includes(roleName.id);
