@@ -88,8 +88,9 @@ module.exports = {
             const errorembed = new MessageEmbed()
 
                 .setTitle('Error')
-                .setDescription("An unexpected Error occured! If you see this, please contact the Developer!")
+                .setDescription("An unexpected Error occured!")
                 .addField('Make sure', 'you mentioned a role!')
+                .addField('Make sure', 'you gor the right order! <user> <role>!')
                 .addField('Developer Info', e)
                 .setColor('RED')
 
