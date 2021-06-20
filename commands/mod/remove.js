@@ -97,6 +97,7 @@ module.exports = {
         } else {
 
             console.log('*RETURN was used in the wrong channel!');
+            message.channel.send('You can not use this command here!');
             return;
 
         }

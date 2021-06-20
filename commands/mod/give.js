@@ -102,6 +102,7 @@ module.exports = {
         } else {
 
             console.log('*GIVE was used in the wrong channel!');
+            message.channel.send('You can not use this command here!');
             return;
 
         }
