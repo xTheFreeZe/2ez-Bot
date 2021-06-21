@@ -7,6 +7,7 @@ const {
 } = require('discord.js');
 
 const PREFIX = '*';
+const SniffCheck = new Set;
 
 
 
@@ -40,7 +41,7 @@ client.on('message', async message => {
 
     if (cmd.length === 0) return;
 
-    let command = client.commands.get(cmd);  
+    let command = client.commands.get(cmd);
 
     if (command)
         command.run(client, message, args);
@@ -137,6 +138,45 @@ client.on('message', message => {
     }
 });
 
+client.on('message', msg => {
+    let args = msg.content.substring(PREFIX.length).split(" ");
+    let author = msg.author
+
+    switch (args[0]) {
+        case "toggleSniffon":
+
+            if (!message.guild) return;
+
+            SniffCheck.add(message.guild.id);
+
+
+            message.channel.send('The Sniff-Emote reaction has been toggled to `on`');
+
+
+
+    }
+})
+
+
+client.on('message', msg => {
+    let args = msg.content.substring(PREFIX.length).split(" ");
+    let author = msg.author
+
+    switch (args[0]) {
+        case "toggleSniffon":
+
+            if (!message.guild) return;
+
+            SniffCheck.delete(message.guild.id);
+
+
+            message.channel.send('The Sniff-Emote reaction has been toggled to `on`');
+
+
+
+    }
+})
+
 
 client.on('message', message => {
     if (message.content === '*test') {
@@ -151,29 +191,38 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+
     if (message.channel.id == '585883817458401342') {
-        
+
+        if (SniffCheck.has(message.guild.id)) return;
+
         if (message.author.id == '317630435008053248') {
-            
+
+            if (SniffCheck.has(message.guild.id)) return;
+
             message.react('<:Sniff_SWAG:766369729338146846>');
 
         }
 
         return;
-        
+
     }
 })
 
 client.on('message', message => {
     if (message.content.includes("sniff")) {
-        ;
+
+        if (SniffCheck.has(message.guild.id)) return;
+
         message.react('<:Sniff_SWAG:766369729338146846>')
     }
 });
 
 client.on('message', message => {
     if (message.content.includes("Sniff")) {
-        ;
+
+        if (SniffCheck.has(message.guild.id)) return;
+
         message.react('<:Sniff_SWAG:766369729338146846>')
     }
 });
