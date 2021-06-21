@@ -147,7 +147,7 @@ client.on('message', msg => {
 
             if (!msg.guild) return;
 
-            if (!msg.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You can not use that!');
+            if (!msg.member.hasPermission('MANAGE_MESSAGES')) return msg.reply('You can not use that!');
 
             SniffCheck.add(msg.guild.id);
 
@@ -168,7 +168,7 @@ client.on('message', msg => {
         case "toggleSniffon":
 
             if (!msg.guild) return;
-            if (!msg.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You can not use that!');
+            if (!msg.member.hasPermission('MANAGE_MESSAGES')) return msg.reply('You can not use that!');
 
             SniffCheck.delete(msg.guild.id);
 
