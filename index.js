@@ -147,6 +147,8 @@ client.on('message', msg => {
 
             if (!msg.guild) return;
 
+            if (!msg.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You can not use that!');
+
             SniffCheck.add(msg.guild.id);
 
 
@@ -166,6 +168,7 @@ client.on('message', msg => {
         case "toggleSniffon":
 
             if (!msg.guild) return;
+            if (!msg.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You can not use that!');
 
             SniffCheck.delete(msg.guild.id);
 
@@ -213,6 +216,7 @@ client.on('message', message => {
     if (message.content.includes("sniff")) {
 
         if (SniffCheck.has(message.guild.id)) return;
+        if (message.author.bot) return;
 
         message.react('<:Sniff_SWAG:766369729338146846>')
     }
@@ -222,6 +226,7 @@ client.on('message', message => {
     if (message.content.includes("Sniff")) {
 
         if (SniffCheck.has(message.guild.id)) return;
+        if (message.author.bot) return;
 
         message.react('<:Sniff_SWAG:766369729338146846>')
     }
