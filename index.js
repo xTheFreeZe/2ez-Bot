@@ -145,12 +145,12 @@ client.on('message', msg => {
     switch (args[0]) {
         case "toggleSniffon":
 
-            if (!message.guild) return;
+            if (!msg.guild) return;
 
-            SniffCheck.add(message.guild.id);
+            SniffCheck.add(msg.guild.id);
 
 
-            message.channel.send('The Sniff-Emote reaction has been toggled to `on`');
+            msg.channel.send('The Sniff-Emote reaction has been toggled to `on`');
 
 
 
@@ -165,12 +165,12 @@ client.on('message', msg => {
     switch (args[0]) {
         case "toggleSniffoff":
 
-            if (!message.guild) return;
+            if (!msg.guild) return;
 
-            SniffCheck.delete(message.guild.id);
+            SniffCheck.delete(msg.guild.id);
 
 
-            message.channel.send('The Sniff-Emote reaction has been toggled to `off`');
+            msg.channel.send('The Sniff-Emote reaction has been toggled to `off`');
 
 
 
