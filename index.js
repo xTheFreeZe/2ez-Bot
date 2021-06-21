@@ -143,14 +143,14 @@ client.on('message', msg => {
     let author = msg.author
 
     switch (args[0]) {
-        case "toggleSniffon":
+        case "toggleSniffoff":
 
             if (!msg.guild) return;
 
             SniffCheck.add(msg.guild.id);
 
 
-            msg.channel.send('The Sniff-Emote reaction has been toggled to `on`');
+            msg.channel.send('The Sniff-Emote reaction has been toggled to `off`');
 
 
 
@@ -163,14 +163,14 @@ client.on('message', msg => {
     let author = msg.author
 
     switch (args[0]) {
-        case "toggleSniffoff":
+        case "toggleSniffon":
 
             if (!msg.guild) return;
 
             SniffCheck.delete(msg.guild.id);
 
 
-            msg.channel.send('The Sniff-Emote reaction has been toggled to `off`');
+            msg.channel.send('The Sniff-Emote reaction has been toggled to `on`');
 
 
 
