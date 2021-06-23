@@ -48,10 +48,10 @@ module.exports = {
 
                 const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
                 const roleName = message.guild.roles.cache.find(r => (r.name === args[1].toString()) || (r.id === args[1].toString().replace(/[^\w\s]/gi, '')));
-
-
+                let guild = client.guilds.get('272733246792531968');
+                
+                if (guild.member(member)) return ('This user does not appear on this Server!');
                 if (!member) return message.channel.send(nomember);
-                if (!args[0] == member) return message.channel.send(memberfirst);
                 //if (!roleName) return message.channel.send(norole);
 
                 const alreadyHasRole = member._roles.includes(roleName.id);
