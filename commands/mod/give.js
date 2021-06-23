@@ -26,6 +26,10 @@ module.exports = {
                 .setDescription('Please mention someone, or provide an ID!')
                 .setColor('RED')
 
+            let Nservermember = new MessageEmbed()
+                .setDescription('It looks like this person is no longer on this server!')
+                .setColor('RED')
+
             let norole = new MessageEmbed()
                 .setDescription('Please mention a role!')
                 .setColor('RED')
@@ -51,7 +55,7 @@ module.exports = {
 
 
                 if (!member) return message.channel.send(nomember);
-                if (!args[0] == member) return message.channel.send(memberfirst);
+                if (!message.guild.member) return message.channel.send(Nservermember);
                 //if (!roleName) return message.channel.send(norole);
 
                 const alreadyHasRole = member._roles.includes(roleName.id);
