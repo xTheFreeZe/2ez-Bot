@@ -10,7 +10,7 @@ module.exports = {
     run: async (client, message, args) => {
 
 
-        if (message.channel.id == '821393051561361493') {
+        if (message.channel.id == '587956575315034114') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -24,10 +24,6 @@ module.exports = {
 
             let nomember = new MessageEmbed()
                 .setDescription('Please mention someone, or provide an ID!')
-                .setColor('RED')
-
-            let Nservermember = new MessageEmbed()
-                .setDescription('It looks like this person is no longer on this server!')
                 .setColor('RED')
 
             let norole = new MessageEmbed()
@@ -54,9 +50,8 @@ module.exports = {
                 const roleName = message.guild.roles.cache.find(r => (r.name === args[1].toString()) || (r.id === args[1].toString().replace(/[^\w\s]/gi, '')));
 
 
-                if (!member) message.channel.send(nomember).then(() => {
-                    if (!message.guild.member) return message.channel.send(Nservermember);
-                })
+                if (!member) return message.channel.send(nomember);
+                if (!args[0] == member) return message.channel.send(memberfirst);
                 //if (!roleName) return message.channel.send(norole);
 
                 const alreadyHasRole = member._roles.includes(roleName.id);
