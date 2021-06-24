@@ -17,7 +17,11 @@ module.exports = {
             .setColor('RANDOM')
             .setDescription(":ping_pong: Ping of 2ez Bot is `" + `${ping}` + " ms`")
         await message.channel.send(embed);
-        
+
         if (highping) message.channel.send('High Ping detected! This could lead to slow messages!');
+        message.delete().catch(() => {
+            message.react('❌');
+        })
     }
+
 }
