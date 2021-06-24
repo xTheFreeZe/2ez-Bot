@@ -24,7 +24,7 @@ module.exports = {
 
             let nomember = new MessageEmbed()
                 .setDescription('Please mention someone, or provide an ID!')
-                .addField('Also check, if the user is still on this Server!', 'error!')
+                .addField('Also check, if the user is still on this Server!', 'undefined')
                 .setColor('RED')
 
             let norole = new MessageEmbed()
