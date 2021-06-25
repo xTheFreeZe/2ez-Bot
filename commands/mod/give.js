@@ -37,7 +37,7 @@ module.exports = {
 
             let Dontownrole = new MessageEmbed()
                 .setTitle('Wait a second!')
-                .setDescription('You can not give away roles that **you** dont even have!')
+                .setDescription('You cant give out roles that you dont have!')
                 .setColor('RED')
                 .setTimestamp()
                 .setFooter('Messages returned here #68 !')
