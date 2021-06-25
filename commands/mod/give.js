@@ -58,7 +58,7 @@ module.exports = {
                 //const authorroleCheck = message.author.roles.includes(roleName.id);
 
                 if (alreadyHasRole) return message.channel.send('User already has that role');
-                if (!message.member.roles.cache.some(r => r.name === roleName.id)) return message.channel.send('you can not!');
+                if (!message.author.roles.cache.some(r => r.name === roleName.id)) return message.channel.send('you can not!');
 
 
                 const embed = new MessageEmbed()
