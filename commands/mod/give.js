@@ -52,8 +52,7 @@ module.exports = {
 
 
                 if (!member) return message.channel.send(nomember);
-                if (!args[0] == member) return message.channel.send(memberfirst);
-                //if (!roleName) return message.channel.send(norole);
+                if (args[0].length == 18) await message.channel.send('You used an ID!');
 
                 const alreadyHasRole = member._roles.includes(roleName.id);
 

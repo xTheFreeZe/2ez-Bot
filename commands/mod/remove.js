@@ -48,7 +48,7 @@ module.exports = {
                 const roleName = message.guild.roles.cache.find(r => (r.name === args[1].toString()) || (r.id === args[1].toString().replace(/[^\w\s]/gi, '')));
 
                 if (!member) return message.channel.send(nomember);
-                //if (!roleName) return message.channel.send(norole);
+                if (args[0].length == 18) await message.channel.send('You used an ID!');
 
                 const alreadyHasRole = member._roles.includes(roleName.id);
 
