@@ -96,7 +96,7 @@ module.exports = {
         } else {
 
             console.log('*RETURN was used in the wrong channel!');
-            message.channel.send('This command is currenly unavailable. Please wait until the Maintenance is done!');
+            message.channel.send('This command is currently unavailable. Please wait until the Maintenance is done!');
             return;
 
         }

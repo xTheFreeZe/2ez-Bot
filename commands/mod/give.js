@@ -55,10 +55,10 @@ module.exports = {
                 if (args[0].length == 18) await message.channel.send('You used an ID!');
 
                 const alreadyHasRole = member._roles.includes(roleName.id);
-                const authorroleCheck = message.author.roles.includes(roleName.id);
+                //const authorroleCheck = message.author.roles.includes(roleName.id);
 
                 if (alreadyHasRole) return message.channel.send('User already has that role');
-                if (!authorroleCheck) return message.channel.send('You can not !');
+                if (!message.member.roles.find(r => r.name === roleName.id)) return message.channel.send('you can not!');
 
 
                 const embed = new MessageEmbed()
@@ -104,7 +104,7 @@ module.exports = {
         } else {
 
             console.log('*GIVE was used in the wrong channel!');
-            message.channel.send('This command is currenly unavailable. Please wait until the Maintenance is done!');
+            message.channel.send('This command is currently unavailable. Please wait until the Maintenance is done!');
             return;
 
         }
