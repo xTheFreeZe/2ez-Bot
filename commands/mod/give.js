@@ -35,6 +35,13 @@ module.exports = {
                 .setDescription('Please mention a member as your first argument!')
                 .setColor('RED')
 
+            let Dontownrole = new MessageEmbed()
+                .setTitle('Wait a second!')
+                .setDescription('You can not give away roles that **you** dont even have!')
+                .setColor('RED')
+                .setTimestamp()
+                .setFooter('Messages returned here #68 !')
+
 
             if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
 
@@ -58,7 +65,7 @@ module.exports = {
                 //const authorroleCheck = message.author.roles.includes(roleName.id);
 
                 if (alreadyHasRole) return message.channel.send('User already has that role');
-                if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send('you can not!');
+                if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send(Dontownrole);
 
 
                 const embed = new MessageEmbed()
