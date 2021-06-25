@@ -38,8 +38,6 @@ module.exports = {
 
             }
 
-            if (!message.channel.id == '587956575315034114') return;
-
 
             if (!args[0] || !args[1]) return message.channel.send(useembed);
 
