@@ -55,7 +55,7 @@ module.exports = {
                 if (args[0].length == 18) await message.channel.send('You used an ID!');
 
                 const alreadyHasRole = member._roles.includes(roleName.id);
-                const authorroleCheck = message.author._roles.includes(roleName.id);
+                const authorroleCheck = message.author.roles.includes(roleName.id);
 
                 if (alreadyHasRole) return message.channel.send('User already has that role');
                 if (!authorroleCheck) return message.channel.send('You can not !');
