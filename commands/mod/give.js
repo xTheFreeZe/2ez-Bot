@@ -102,7 +102,7 @@ module.exports = {
         } else {
 
             console.log('*GIVE was used in the wrong channel!');
-            message.channel.send('You can not use this command here!');
+            message.channel.send('This command is currenly unavailable. Please wait until the Maintenance is done!');
             return;
 
         }
