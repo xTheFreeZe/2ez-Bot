@@ -9,7 +9,7 @@ module.exports = {
 
     run: async (client, message, args) => {
 
-        if (message.channel.id == '821393051561361493') {
+        if (message.channel.id == '587956575315034114') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -104,7 +104,7 @@ module.exports = {
         } else {
 
             console.log('*RETURN was used in the wrong channel!');
-            message.channel.send('This command is currently unavailable. Please wait until the Maintenance is done!');
+            message.channel.send('You can not use this command here!');
             return;
 
         }
