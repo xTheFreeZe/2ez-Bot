@@ -213,17 +213,7 @@ client.on('message', message => {
 })
 
 client.on('message', message => {
-    if (message.content.includes("sniff")) {
-
-        if (SniffCheck.has(message.guild.id)) return;
-        if (message.author.bot) return;
-
-        message.react('<:Sniff_SWAG:766369729338146846>')
-    }
-});
-
-client.on('message', message => {
-    if (message.content.includes("Sniff")) {
+    if (message.content.toLowerCase().includes("sniff")) {
 
         if (SniffCheck.has(message.guild.id)) return;
         if (message.author.bot) return;
