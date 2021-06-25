@@ -40,7 +40,7 @@ module.exports = {
                 .setDescription('You cant give out roles that you dont have!')
                 .setColor('RED')
                 .setTimestamp()
-                .setFooter('Messages returned here #68 !')
+                .setFooter('Message returned here #68 !')
 
 
             if (!message.guild.me.hasPermission('MANAGE_ROLES')) {

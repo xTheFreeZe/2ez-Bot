@@ -35,7 +35,7 @@ module.exports = {
                 .setDescription('You cant remove roles that you dont have!')
                 .setColor('RED')
                 .setTimestamp()
-                .setFooter('Messages returned here #58!')
+                .setFooter('Message returned here #58!')
 
 
 
