@@ -30,6 +30,13 @@ module.exports = {
                 .setDescription('Please mention a role!')
                 .setColor('RED')
 
+            let Dontownrole = new MessageEmbed()
+                .setTitle('Wait a second!')
+                .setDescription('You cant remove roles that you dont have!')
+                .setColor('RED')
+                .setTimestamp()
+                .setFooter('Messages returned here #58!')
+
 
 
             if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
@@ -53,6 +60,7 @@ module.exports = {
                 const alreadyHasRole = member._roles.includes(roleName.id);
 
                 if (!alreadyHasRole) return message.channel.send('This User does not have that Role!');
+                if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send(Dontownrole);
 
 
                 const embed = new MessageEmbed()
