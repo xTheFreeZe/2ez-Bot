@@ -10,7 +10,7 @@ module.exports = {
     run: async (client, message, args) => {
 
 
-        if (message.channel.id == '587956575315034114') {
+        if (message.channel.id == '821393051561361493') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -55,8 +55,10 @@ module.exports = {
                 if (args[0].length == 18) await message.channel.send('You used an ID!');
 
                 const alreadyHasRole = member._roles.includes(roleName.id);
+                const authorroleCheck = message.author._roles.includes(roleName.id);
 
                 if (alreadyHasRole) return message.channel.send('User already has that role');
+                if (!authorroleCheck) return message.channel.send('You can not !');
 
 
                 const embed = new MessageEmbed()
