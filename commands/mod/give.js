@@ -59,7 +59,7 @@ module.exports = {
 
 
                 if (!member) return message.channel.send(nomember);
-                if (args[0].length == 18) await message.channel.send('You used an ID!');
+                if (args[0].length == 18) console.log('An ID was being used!');
 
                 const alreadyHasRole = member._roles.includes(roleName.id);
                 //const authorroleCheck = message.author.roles.includes(roleName.id);
