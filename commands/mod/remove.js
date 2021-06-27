@@ -9,7 +9,7 @@ module.exports = {
 
     run: async (client, message, args) => {
 
-        if (message.channel.id == '587956575315034114') {
+        if (message.channel.id == '821393051561361493') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -33,7 +33,7 @@ module.exports = {
             let Dontownrole = new MessageEmbed()
                 .setTitle('Wait a second!')
                 .setDescription('You cant remove roles that you dont have!')
-                .addField('You tried to remove ', `${roleName.name}`)
+                .addField('You tried to remove ', `${roleName}`)
                 .setColor('RED')
                 .setTimestamp()
 
@@ -104,7 +104,7 @@ module.exports = {
         } else {
 
             console.log('*RETURN was used in the wrong channel!');
-            message.channel.send('You can not use this command here!');
+            message.channel.send('An ID problem occured!');
             return;
 
         }

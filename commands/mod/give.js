@@ -53,7 +53,7 @@ module.exports = {
                 let Dontownrole = new MessageEmbed()
                     .setTitle('Wait a second!')
                     .setDescription('You cant give out roles that you dont have!')
-                    .addField('You tried to give ', `${roleName.name}`)
+                    .addField('You tried to give ', `${roleName}`)
                     .setColor('RED')
                     .setTimestamp()
 
