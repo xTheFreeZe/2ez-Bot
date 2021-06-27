@@ -24,7 +24,7 @@ module.exports = {
 
             let nomember = new MessageEmbed()
                 .setDescription('Please mention someone, or provide an ID!')
-                .addField('Also check, if the user is still on this Server!', `${message.author.username}`)
+                .addField('Also check, if the user is still on this Server!', ` Request: ${message.author.username}`)
                 .setColor('RED')
 
             let norole = new MessageEmbed()
@@ -34,13 +34,6 @@ module.exports = {
             let memberfirst = new MessageEmbed()
                 .setDescription('Please mention a member as your first argument!')
                 .setColor('RED')
-
-            let Dontownrole = new MessageEmbed()
-                .setTitle('Wait a second!')
-                .setDescription('You cant give out roles that you dont have!')
-                .setColor('RED')
-                .setTimestamp()
-                .setFooter('Message returned here #68 !')
 
 
             if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
@@ -56,6 +49,13 @@ module.exports = {
 
                 const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
                 const roleName = message.guild.roles.cache.find(r => (r.name === args[1].toString()) || (r.id === args[1].toString().replace(/[^\w\s]/gi, '')));
+
+                let Dontownrole = new MessageEmbed()
+                    .setTitle('Wait a second!')
+                    .setDescription('You cant give out roles that you dont have!')
+                    .addField('You tried to give ', `${roleName.name}`)
+                    .setColor('RED')
+                    .setTimestamp()
 
 
                 if (!member) return message.channel.send(nomember);

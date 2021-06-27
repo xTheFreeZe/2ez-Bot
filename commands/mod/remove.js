@@ -23,7 +23,7 @@ module.exports = {
 
             let nomember = new MessageEmbed()
                 .setDescription('Please mention someone, or provide an ID!')
-                .addField('Also check, if the user is still on this Server!', `${message.author.username}`)
+                .addField('Also check, if the user is still on this Server!', `Request: ${message.author.username}`)
                 .setColor('RED')
 
             let norole = new MessageEmbed()
@@ -33,9 +33,9 @@ module.exports = {
             let Dontownrole = new MessageEmbed()
                 .setTitle('Wait a second!')
                 .setDescription('You cant remove roles that you dont have!')
+                .addField('You tried to remove ', `${roleName.name}`)
                 .setColor('RED')
                 .setTimestamp()
-                .setFooter('Message returned here #58!')
 
 
 
