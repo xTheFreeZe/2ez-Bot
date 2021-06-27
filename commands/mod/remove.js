@@ -30,14 +30,6 @@ module.exports = {
                 .setDescription('Please mention a role!')
                 .setColor('RED')
 
-            let Dontownrole = new MessageEmbed()
-                .setTitle('Wait a second!')
-                .setDescription('You cant remove roles that you dont have!')
-                .addField('You tried to remove ', `${roleName}`)
-                .setColor('RED')
-                .setTimestamp()
-
-
 
             if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
 
@@ -53,6 +45,13 @@ module.exports = {
 
                 const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
                 const roleName = message.guild.roles.cache.find(r => (r.name === args[1].toString()) || (r.id === args[1].toString().replace(/[^\w\s]/gi, '')));
+
+                let Dontownrole = new MessageEmbed()
+                    .setTitle('Wait a second!')
+                    .setDescription('You cant remove roles that you dont have!')
+                    .addField('You tried to remove ', `${roleName}`)
+                    .setColor('RED')
+                    .setTimestamp()
 
                 if (!member) return message.channel.send(nomember);
                 if (args[0].length == 18) console.log('An ID was being used!');
