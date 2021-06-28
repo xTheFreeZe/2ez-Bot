@@ -71,7 +71,7 @@ module.exports = {
                 const embed = new MessageEmbed()
                     .setTitle(`${roleName.name} was transferred!`)
                     .setDescription(`You updated the roles for ${member.user}`)
-                    .addField('Added', `${roleName}`)
+                    .addField('Added', `${roleName}`, true)
                     .addField('Role ID', `${roleName.id}`, true)
                     .setColor('GREEN')
                     .setTimestamp()
