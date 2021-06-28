@@ -70,10 +70,11 @@ module.exports = {
 
                 const embed = new MessageEmbed()
                     .setTitle(`${roleName.name} was transferred!`)
-                    .setDescription(`${roleName} was given to ${member.user}`)
-                    .setColor('f3f3f3')
+                    .setDescription(`You updated the roles for ${member.user}`)
+                    .addField('Added', `${roleName}`)
+                    .setColor('GREEN')
                     .setTimestamp()
-                    .setFooter(`${message.author.username}`)
+                    .setFooter(`Role ID: ${roleName.id}`)
                     .setThumbnail(member.user.displayAvatarURL({
                         dynamic: true
                     }))

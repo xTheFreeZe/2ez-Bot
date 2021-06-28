@@ -63,11 +63,12 @@ module.exports = {
 
 
                 const embed = new MessageEmbed()
-                    .setTitle(`${roleName.name} was removed!`)
-                    .setDescription(`${roleName} was removed from ${member.user}`)
-                    .setColor('f3f3f3')
+                    .setTitle(`Role was transferred!`)
+                    .setDescription(`You updated the roles for ${member.user}`)
+                    .addField('Removed', `${roleName}`)
+                    .setColor('GREEN')
                     .setTimestamp()
-                    .setFooter(`${message.author.username}`)
+                    .setFooter(`Role ID: ${roleName.id}`)
                     .setThumbnail(member.user.displayAvatarURL({
                         dynamic: true
                     }))
