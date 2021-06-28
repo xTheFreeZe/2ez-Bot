@@ -10,7 +10,7 @@ module.exports = {
     run: async (client, message, args) => {
 
 
-        if (message.channel.id == '587956575315034114') {
+        if (message.channel.id == '821393051561361493') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -111,7 +111,7 @@ module.exports = {
         } else {
 
             console.log('*GIVE was used in the wrong channel!');
-            message.channel.send('An ID problem occured!');
+            message.channel.send('This command is currently unavailable!');
             return;
 
         }
