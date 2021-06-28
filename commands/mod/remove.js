@@ -63,7 +63,7 @@ module.exports = {
 
 
                 const embed = new MessageEmbed()
-                    .setTitle(`${roleName.name} was transferred!`)
+                    .setTitle(`${roleName.name} was removed!`)
                     .setDescription(`You updated the roles for ${member.user}`)
                     .addField('Removed', `${roleName}`, true)
                     .addField('Role ID', `${roleName.id}`, true)
