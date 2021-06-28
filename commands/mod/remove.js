@@ -9,7 +9,7 @@ module.exports = {
 
     run: async (client, message, args) => {
 
-        if (message.channel.id == '821393051561361493') {
+        if (message.channel.id == '587956575315034114') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
