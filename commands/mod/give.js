@@ -72,9 +72,10 @@ module.exports = {
                     .setTitle(`${roleName.name} was transferred!`)
                     .setDescription(`You updated the roles for ${member.user}`)
                     .addField('Added', `${roleName}`)
+                    .addField('Role ID', `${roleName.id}`, true)
                     .setColor('GREEN')
                     .setTimestamp()
-                    .setFooter(`Role ID: ${roleName.id}`)
+                    .setFooter(`${message.author.username}`)
                     .setThumbnail(member.user.displayAvatarURL({
                         dynamic: true
                     }))
