@@ -8,7 +8,7 @@ module.exports = {
     category: "mot test",
     description: "test",
 
-    run: async (client, message, testlist) => {
+    run: async (client, message, testlist, PREFIX) => {
 
         let args = message.content.substring(PREFIX.length).split(" ");
 
