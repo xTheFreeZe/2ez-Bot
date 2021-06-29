@@ -8,7 +8,9 @@ module.exports = {
     category: "mot test",
     description: "test",
 
-    run: async (client, message, testlist, args) => {
+    run: async (client, message, testlist) => {
+
+        let args = message.content.substring(PREFIX.length).split(" ");
 
         let ruleembeddesc = [
             "1) Disruptive behaviour is not tolerated. This includes (but is not limited to) spam, slurs, hate speech, harassment, insults, witch-hunting, and impersonation.",
@@ -40,11 +42,11 @@ module.exports = {
             .setColor('BLUE')
             .setThumbnail('https://cdn.discordapp.com/attachments/753238962050695228/813016413131243550/Rules.png')
 
-        if (!args[0]) {
+        if (!args[1]) {
 
             return message.channel.send('Chose from one of the following options  : `*send rules` ');
 
-        } else if (args[0] == 'rules') {
+        } else if (args[1] == 'rules') {
 
             return message.channel.send(rulesembed);
 
