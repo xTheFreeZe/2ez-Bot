@@ -4,7 +4,7 @@ const {
 } = require('discord.js');
 
 module.exports = {
-    name: "info",
+    name: "send",
     category: "information",
     description: "Gives info about the selected command!",
     run: async (client, message, args) => {
