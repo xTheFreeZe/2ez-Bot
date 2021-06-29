@@ -38,7 +38,7 @@ module.exports = {
             .setTitle('2ez Rules')
             .setDescription(ruleembeddesc)
             .setColor('BLUE')
-            .setThumbnail('https://cdn.discordapp.com/attachments/753238962050695228/813016413131243550/Rules.png%27')
+            .setThumbnail('https://cdn.discordapp.com/attachments/753238962050695228/813016413131243550/Rules.png')
 
         if (!args[0]) {
 
