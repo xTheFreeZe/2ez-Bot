@@ -5,8 +5,6 @@ const {
 
 module.exports = {
     name: "send",
-    category: "information",
-    description: "Gives info about the selected command!",
     run: async (client, message, args) => {
 
 
