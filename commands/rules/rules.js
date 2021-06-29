@@ -4,11 +4,11 @@ const {
 
 
 module.exports = {
-    name: "rules",
+    name: "send",
     category: "mot test",
     description: "test",
 
-    run: async (client, message, testlist) => {
+    run: async (client, message, testlist, args) => {
 
         let ruleembeddesc = [
             "1) Disruptive behaviour is not tolerated. This includes (but is not limited to) spam, slurs, hate speech, harassment, insults, witch-hunting, and impersonation.",
@@ -40,7 +40,19 @@ module.exports = {
             .setColor('BLUE')
             .setThumbnail('https://cdn.discordapp.com/attachments/753238962050695228/813016413131243550/Rules.png')
 
-        message.channel.send(rulesembed);
+        if (!args[0]) {
+
+            return message.channel.send('Chose from one of the following options  : `*send rules` ');
+
+        } else if (args[0] == 'rules') {
+
+            return message.channel.send(rulesembed);
+
+        } else {
+
+            return message.channel.send('Thats not a valid option!');
+
+        }
 
 
     }
