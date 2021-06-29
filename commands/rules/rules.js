@@ -1,16 +1,14 @@
 const {
-    MessageEmbed
+    MessageEmbed,
+    ReactionCollector
 } = require('discord.js');
 
-
 module.exports = {
-    name: "send",
-    category: "mot test",
-    description: "test",
+    name: "info",
+    category: "information",
+    description: "Gives info about the selected command!",
+    run: async (client, message, args) => {
 
-    run: async (client, message, testlist, PREFIX) => {
-
-        let args = message.content.substring(PREFIX.length).split(" ");
 
         let ruleembeddesc = [
             "1) Disruptive behaviour is not tolerated. This includes (but is not limited to) spam, slurs, hate speech, harassment, insults, witch-hunting, and impersonation.",
@@ -23,12 +21,12 @@ module.exports = {
             " ",
             "5) Posting content known to crash Discord or that could cause non-malicious effects to a members PC are prohibited in all text channels.",
             " ",
-            "6) Advertisement is only permitted in <#813016558728511499>. Discord invite links are not permitted unless discussed with the management team.",
+            "6) Advertisement is only permitted in #deleted-channel. Discord invite links are not permitted unless discussed with the management team.",
             " ",
             "7) This server is English speaking. We kindly ask that you only use English to communicate with members on this server.",
             " ",
             "8) Final verdict and rule interpretation is at management team discretion. If you are asked by an Admin/C-Rep to stop doing something, stop doing it.",
-            "• If you have questions regarding a decision made by either an Admin or C-Rep, please contact us by sending a DM to <@!575252669443211264>.",
+            "• If you have questions regarding a decision made by either an Admin or C-Rep, please contact us by sending a DM to @ModMail.",
             " ",
             "Infractions will typically progress as such: warn -> mute -> ban. Steps in this progression may be skipped based on the severity of the infraction.",
             " ",
@@ -40,13 +38,13 @@ module.exports = {
             .setTitle('2ez Rules')
             .setDescription(ruleembeddesc)
             .setColor('BLUE')
-            .setThumbnail('https://cdn.discordapp.com/attachments/753238962050695228/813016413131243550/Rules.png')
+            .setThumbnail('https://cdn.discordapp.com/attachments/753238962050695228/813016413131243550/Rules.png%27')
 
-        if (!args[1]) {
+        if (!args[0]) {
 
-            return message.channel.send('Chose from one of the following options  : `*send rules` ');
+            return message.channel.send('Chose from one of the following options  : *send rules ');
 
-        } else if (args[1] == 'rules') {
+        } else if (args[0] == 'rules') {
 
             return message.channel.send(rulesembed);
 
@@ -55,6 +53,8 @@ module.exports = {
             return message.channel.send('Thats not a valid option!');
 
         }
+
+
 
 
     }
