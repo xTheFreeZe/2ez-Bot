@@ -243,12 +243,6 @@ client.on('guildMemberAdd', async member => {
     const reembed = new MessageEmbed()
         .setDescription(`${member}`)
 
-    const kembed = new MessageEmbed()
-        .setTitle('2ez just Hit 1000 Members!')
-        .setColor('GREEN')
-        .setDescription('<:pogU:836244303034318908> <:pogU:836244303034318908> Huge! <:pogU:836244303034318908> <:pogU:836244303034318908>')
-        .setTimestamp()
-
 
     const welcomechannel = client.channels.cache.get('585883817458401342');
 

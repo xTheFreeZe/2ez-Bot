@@ -20,7 +20,7 @@ module.exports = {
             " ",
             "5) Posting content known to crash Discord or that could cause non-malicious effects to a members PC are prohibited in all text channels.",
             " ",
-            "6) Advertisement is only permitted in #deleted-channel. Discord invite links are not permitted unless discussed with the management team.",
+            "6) Advertisement is only permitted in <#622863278548189194>. Discord invite links are not permitted unless discussed with the management team.",
             " ",
             "7) This server is English speaking. We kindly ask that you only use English to communicate with members on this server.",
             " ",
