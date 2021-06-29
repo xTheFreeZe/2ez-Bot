@@ -7,6 +7,7 @@ module.exports = {
     name: "send",
     run: async (client, message, args) => {
 
+        if (!message.member.roles.cache.some(role => role.name === 'Admin')) return message.channel.send('You cant use this!');
 
         let ruleembeddesc = [
             "1) Disruptive behaviour is not tolerated. This includes (but is not limited to) spam, slurs, hate speech, harassment, insults, witch-hunting, and impersonation.",
