@@ -9,6 +9,13 @@ module.exports = {
 
         if (!message.member.roles.cache.some(role => role.name === 'Admin')) return message.channel.send('You cant use this!');
 
+        const chooseembed = new MessageEmbed()
+            .setTitle('Choose and embed to send')
+            .setDescription('`*send rules` , more following')
+            .setColor('RANDOM')
+            .setTimestamp()
+        
+        
         let ruleembeddesc = [
             "1) Disruptive behaviour is not tolerated. This includes (but is not limited to) spam, slurs, hate speech, harassment, insults, witch-hunting, and impersonation.",
             " ",
@@ -38,10 +45,11 @@ module.exports = {
             .setDescription(ruleembeddesc)
             .setColor('BLUE')
             .setThumbnail('https://cdn.discordapp.com/attachments/753238962050695228/813016413131243550/Rules.png')
+            .setTimestamp()
 
         if (!args[0]) {
 
-            return message.channel.send('Chose from one of the following options  : *send rules ');
+            return message.channel.send(chooseembed);
 
         } else if (args[0] == 'rules') {
 
