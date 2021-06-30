@@ -105,7 +105,7 @@ module.exports = {
         } else {
 
             console.log('*RETURN was used in the wrong channel!');
-            message.channel.send('This command is currently unavailable!');
+            message.channel.send('You cant use this command here! This is only available in the Team Captains channel');
             return;
 
         }
