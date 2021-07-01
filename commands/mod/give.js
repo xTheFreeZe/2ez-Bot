@@ -35,6 +35,8 @@ module.exports = {
                 .setDescription('Please mention a member as your first argument!')
                 .setColor('RED')
 
+            const OWAdmin = message.member.roles.cache.some(role => role.name === "Overwatch Admin");
+
 
             if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
 
@@ -65,8 +67,12 @@ module.exports = {
                 //const authorroleCheck = message.author.roles.includes(roleName.id);
 
                 if (alreadyHasRole) return message.channel.send('User already has that role');
-                if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send(Dontownrole);
 
+                if (!OWAdmin) {
+
+                    if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send(Dontownrole);
+
+                }
 
                 const embed = new MessageEmbed()
                     .setTitle(`${roleName.name} was transferred!`)
