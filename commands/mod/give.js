@@ -71,7 +71,7 @@ module.exports = {
 
                 if (alreadyHasRole) return message.channel.send('User already has that role');
 
-                if (!OWAdmin || !Admin || !C_Rep) {
+                if (!OWAdmin || Admin || C_Rep) {
 
                     if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send(Dontownrole);
 
