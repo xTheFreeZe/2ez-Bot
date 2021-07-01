@@ -57,6 +57,7 @@ module.exports = {
                     .setDescription('You cant give out roles that you dont have!')
                     .addField('You tried to give ', `${roleName}`)
                     .setColor('RED')
+                    .setFooter('Only OW Admins can ignore this!')
                     .setTimestamp()
 
 

@@ -30,6 +30,8 @@ module.exports = {
                 .setDescription('Please mention a role!')
                 .setColor('RED')
 
+            const OWAdmin = message.member.roles.cache.some(role => role.name === "Overwatch Admin");
+
 
             if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
 
@@ -50,6 +52,7 @@ module.exports = {
                     .setTitle('Wait a second!')
                     .setDescription('You cant remove roles that you dont have!')
                     .addField('You tried to remove ', `${roleName}`)
+                    .setFooter('Only OW Admins can ignore this!')
                     .setColor('RED')
                     .setTimestamp()
 
@@ -59,7 +62,12 @@ module.exports = {
                 const alreadyHasRole = member._roles.includes(roleName.id);
 
                 if (!alreadyHasRole) return message.channel.send('This User does not have that Role!');
-                if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send(Dontownrole);
+
+                if (!OWAdmin) {
+
+                    if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send(Dontownrole);
+
+                }
 
 
                 const embed = new MessageEmbed()
