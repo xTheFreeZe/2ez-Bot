@@ -10,7 +10,7 @@ module.exports = {
     run: async (client, message, args) => {
 
 
-        if (message.channel.id == '587956575315034114') {
+        if (message.channel.id == '587956575315034114' || message.channel.id == '753693196680429698') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -122,7 +122,7 @@ module.exports = {
         } else {
 
             console.log('*GIVE was used in the wrong channel!');
-            message.channel.send('You cant use this command here! This is only available in the Team Captains channel');
+            message.channel.send('You cant use this command here! This is only available in specific channels!');
             return;
 
         }
