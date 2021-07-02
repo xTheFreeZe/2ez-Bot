@@ -63,7 +63,7 @@ module.exports = {
 
                 if (!alreadyHasRole) return message.channel.send('This User does not have that Role!');
 
-                if (!OWAdmin) {
+                if (!OWAdmin || !message.member.roles.cache.some(role => role.name === "Admin") || message.member.roles.cache.some(role => role.name === "Community Rep")) {
 
                     if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send(Dontownrole);
 
