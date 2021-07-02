@@ -31,6 +31,8 @@ module.exports = {
                 .setColor('RED')
 
             const OWAdmin = message.member.roles.cache.some(role => role.name === "Overwatch Admin");
+            const Admin = message.member.roles.cache.some(role => role.name === "Admin");
+            const CRep = message.member.roles.cache.some(role => role.name === "Community Rep");
 
 
             if (!message.guild.me.hasPermission('MANAGE_ROLES')) {
@@ -63,7 +65,7 @@ module.exports = {
 
                 if (!alreadyHasRole) return message.channel.send('This User does not have that Role!');
 
-                if (!OWAdmin || !message.member.roles.cache.some(role => role.name === "Admin") || message.member.roles.cache.some(role => role.name === "Community Rep")) {
+                if (!OWAdmin, !Admin, !CRep) {
 
                     if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send(Dontownrole);
 
