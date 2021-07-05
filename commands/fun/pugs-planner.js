@@ -50,6 +50,7 @@ module.exports = {
                     UserIDset.add(user.username);
 
                     let UserIDSetinString = UserIDset.toString();
+                    console.log(UserIDset.length);
 
                     pugsembed.setDescription(UserIDSetinString);
                     pugsembed.setFooter(user.id)
