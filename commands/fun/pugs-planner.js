@@ -55,6 +55,8 @@ module.exports = {
                         message.channel.send('An unknown error occured!');
                     })
 
+                    message.channel.send(`${user.tag} joined the Pugs!`);
+
                 });
             })
             .catch(err => console.error(err));
