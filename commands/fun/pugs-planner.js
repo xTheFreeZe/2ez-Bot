@@ -49,7 +49,7 @@ module.exports = {
 
                     pugsembed.setTitle(`${user.username} joined the Pugs!`);
 
-                    UserIDset.add(user.username);
+                    UserIDset.join(user.username);
 
                     let UserIDSetinString = UserIDset.toString();
                     console.log(UserIDset);
