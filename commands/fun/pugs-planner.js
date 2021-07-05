@@ -23,7 +23,7 @@ module.exports = {
         if (!time) return message.channel.send('Time missing!');
 
         let pugsembed = new MessageEmbed()
-            .setTitle('Unoffical Pugs')
+            .setTitle(`${message}Unoffical Pugs`)
             .setDescription('React below to enter the Pugs')
             .addField('Time', time)
             .setFooter(`${message.author.username}`, avatar)
@@ -37,7 +37,6 @@ module.exports = {
                 m.react('❌');
 
                 const filter = (reaction, user) => reaction.emoji.name === '✅'; // && user.id === message.author.id;
-                var i;
                 const collector = m.createReactionCollector(filter, {
                     max: 100,
                 }); // 5 min
@@ -45,14 +44,15 @@ module.exports = {
                 collector.on('collect', (reaction, user) => {
 
                     pugsembed.setTitle(`${user.username} joined the Pugs!`);
-
                     pugsembed.setDescription('`Number of players!`');
                     pugsembed.setFooter(user.id)
 
                     if (user.id === "830087071413567519") return;
 
-                    message.channel.send(pugsembed).catch(() => {
-                        return message.channel.send('An Unknown error occured!');
+                    message.channel.send(pugsembed).then(m => m.delete({
+                        timeout: 5000
+                    })).catch(() => {
+                        message.channel.send('An unknown error occured!');
                     })
 
                 });
