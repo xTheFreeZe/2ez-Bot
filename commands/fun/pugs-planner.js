@@ -46,6 +46,8 @@ module.exports = {
                     pugsembed.setDescription(`${user.tag} joined the Pugs!`);
                     pugsembed.setFooter('You successfully joined the Pugs!');
 
+                    if (message.author.bot) return;
+
                     message.channel.send(pugsembed);
 
                 });
