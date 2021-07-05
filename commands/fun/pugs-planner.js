@@ -3,6 +3,8 @@ const {
     Client,
 } = require('discord.js');
 
+const UserIDset = new Set();
+
 const Discord = require('discord.js');
 
 
@@ -43,10 +45,15 @@ module.exports = {
 
                 collector.on('collect', (reaction, user) => {
 
-                    pugsembed.setDescription(`${user.tag} joined the Pugs!`);
-                    pugsembed.setFooter('You successfully joined the Pugs!');
+                    pugsembed.setTitle(`${user.username} joined the Pugs!`);
 
-                    if (message.author.bot) return;
+                    UserIDset.add(user.username).catch(() => {
+                        return message.channel.send('An Unknown error occured!');
+                    })
+
+                    let UserIDSetinString = UserIDset.toString();
+
+                    pugsembed.setDescription(UserIDSetinString);
 
                     message.channel.send(pugsembed);
 
