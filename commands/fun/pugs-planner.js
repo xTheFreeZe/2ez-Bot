@@ -1,7 +1,9 @@
 const {
     MessageEmbed,
     Client,
+    Collection,
 } = require('discord.js');
+
 
 const UserIDset = new Collection();
 
