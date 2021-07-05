@@ -41,7 +41,7 @@ module.exports = {
                     max: 100,
                 }); // 5 min
 
-                collector.on('collect', (reaction, user) => {
+                collector.on('collect', async (reaction, user) => {
 
                     pugsembed.setTitle(`${user.username} joined the Pugs!`);
                     pugsembed.setDescription('`Number of players!`');
