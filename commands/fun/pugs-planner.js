@@ -1,11 +1,8 @@
 const {
     MessageEmbed,
     Client,
-    Collection,
 } = require('discord.js');
 
-
-const UserIDset = new Collection();
 
 const Discord = require('discord.js');
 
@@ -49,12 +46,7 @@ module.exports = {
 
                     pugsembed.setTitle(`${user.username} joined the Pugs!`);
 
-                    UserIDset.join(user.username);
-
-                    let UserIDSetinString = UserIDset.toString();
-                    console.log(UserIDset);
-
-                    pugsembed.setDescription(UserIDset);
+                    pugsembed.setDescription('`Number of players!`');
                     pugsembed.setFooter(user.id)
 
                     if (user.id === "830087071413567519") return;
