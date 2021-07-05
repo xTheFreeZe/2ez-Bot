@@ -3,7 +3,7 @@ const {
     Client,
 } = require('discord.js');
 
-const UserIDset = new Set();
+const UserIDset = new Collection();
 
 const Discord = require('discord.js');
 
