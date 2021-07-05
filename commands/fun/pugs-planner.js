@@ -44,7 +44,7 @@ module.exports = {
                 collector.on('collect', async (reaction, user) => {
 
                     pugsembed.setTitle(`${user.username} joined the Pugs!`);
-                    pugsembed.setDescription('`Number of players!`');
+                    pugsembed.setDescription(user);
                     pugsembed.setFooter(user.id)
 
                     if (user.id === "830087071413567519") return;
