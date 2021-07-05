@@ -23,7 +23,7 @@ module.exports = {
         if (!time) return message.channel.send('Time missing!');
 
         let pugsembed = new MessageEmbed()
-            .setTitle(`${message}Unoffical Pugs`)
+            .setTitle(`${message.author.username}'s unoffical pugs`)
             .setDescription('React below to enter the Pugs')
             .addField('Time', time)
             .setFooter(`${message.author.username}`, avatar)
