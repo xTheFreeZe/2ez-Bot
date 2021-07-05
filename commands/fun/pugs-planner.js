@@ -52,6 +52,9 @@ module.exports = {
                     let UserIDSetinString = UserIDset.toString();
 
                     pugsembed.setDescription(UserIDSetinString);
+                    pugsembed.setFooter(user.id)
+
+                    if (user.id === "830087071413567519") return;
 
                     message.channel.send(pugsembed).catch(() => {
                         return message.channel.send('An Unknown error occured!');
