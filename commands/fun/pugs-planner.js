@@ -49,7 +49,7 @@ module.exports = {
 
                     if (user.id === "830087071413567519") return;
 
-                    message.channel.send(pugsembed).then(m => await m.delete({
+                    await message.channel.send(pugsembed).then(m => m.delete({
                         timeout: 5000
                     })).catch(() => {
                         message.channel.send('An unknown error occured!');
