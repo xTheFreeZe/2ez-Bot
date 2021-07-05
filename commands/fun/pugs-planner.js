@@ -50,9 +50,9 @@ module.exports = {
                     UserIDset.add(user.username);
 
                     let UserIDSetinString = UserIDset.toString();
-                    console.log(UserIDset.length);
+                    console.log(UserIDset);
 
-                    pugsembed.setDescription(UserIDSetinString);
+                    pugsembed.setDescription(UserIDset);
                     pugsembed.setFooter(user.id)
 
                     if (user.id === "830087071413567519") return;
