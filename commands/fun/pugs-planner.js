@@ -47,15 +47,15 @@ module.exports = {
 
                     pugsembed.setTitle(`${user.username} joined the Pugs!`);
 
-                    UserIDset.add(user.username).catch(() => {
-                        return message.channel.send('An Unknown error occured!');
-                    })
+                    UserIDset.add(user.username);
 
                     let UserIDSetinString = UserIDset.toString();
 
                     pugsembed.setDescription(UserIDSetinString);
 
-                    message.channel.send(pugsembed);
+                    message.channel.send(pugsembed).catch(() => {
+                        return message.channel.send('An Unknown error occured!');
+                    })
 
                 });
             })
