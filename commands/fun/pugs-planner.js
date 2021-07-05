@@ -41,9 +41,9 @@ module.exports = {
                     max: 100,
                 }); // 5 min
 
-                collector.on('collect', () => {
+                collector.on('collect', collected, () => {
 
-                    pugsembed.setDescription('Amount of people that can play :' + " " + i);
+                    pugsembed.setDescription(`Amount of people that can play : ${collected.size}`);
                     pugsembed.setFooter('You successfully joined the Pugs!');
 
                     message.channel.send(pugsembed);
