@@ -43,7 +43,8 @@ module.exports = {
 
                 collector.on('collect', () => {
 
-                    pugsembed.setDescription('Amount of people that can play :' + " " + i)
+                    pugsembed.setDescription('Amount of people that can play :' + " " + i);
+                    pugsembed.setFooter('You successfully joined the Pugs!');
 
                     message.channel.send(pugsembed);
 
