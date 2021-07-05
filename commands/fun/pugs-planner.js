@@ -21,6 +21,7 @@ module.exports = {
         })
 
         if (!time) return message.channel.send('Time missing!');
+        if (isNaN(time)) return message.channel.send('Please only provide numbers!');
 
         let pugsembed = new MessageEmbed()
             .setTitle(`${message.author.username}'s unoffical pugs`)
@@ -55,9 +56,20 @@ module.exports = {
                         message.channel.send('An unknown error occured!');
                     })
 
-                    message.channel.send(`${user.tag} joined the Pugs!`);
+                    setTimeout(() => {
+
+                        message.channel.send(`Signed up users : ${user.username}`);
+
+                    }, 10000);
+
+                    //One hour in milliseconds = 3,600,000 !!!!! -> IMPORTANT!!
+                    //Usefull for cooldown, I may add later!
+                    //Maybe even two days, idk, gotta ask Turbo
+
+                    //message.channel.send(`${user.tag} joined the Pugs!`);
 
                 });
+
             })
             .catch(err => console.error(err));
 
