@@ -21,6 +21,7 @@ module.exports = {
         })
 
         if (!time) return message.channel.send('Time missing!');
+        var i = 0;
 
         let pugsembed = new MessageEmbed()
             .setTitle(`${message.author.username}'s unoffical pugs`)
@@ -49,6 +50,8 @@ module.exports = {
 
                     if (user.id === "830087071413567519") return;
 
+                    var users = i + 1
+
                     /*
 
                     await message.channel.send(pugsembed).then(m => m.delete({
@@ -61,7 +64,7 @@ module.exports = {
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
-                        .setDescription(`${user}`)
+                        .setDescription(`Available users : ${users}`)
                         .addField('Time', time)
                         .setTimestamp()
                         .setColor('GREEN')
