@@ -39,7 +39,7 @@ module.exports = {
                 const filter = (reaction, user) => reaction.emoji.name === '✅'; // && user.id === message.author.id;
                 const collector = m.createReactionCollector(filter, {
                     max: 100,
-                }); // 5 min
+                });
 
                 collector.on('collect', async (reaction, user) => {
 
@@ -61,9 +61,7 @@ module.exports = {
 
                     }, 10000);
 
-                    //One hour in milliseconds = 3,600,000 !!!!! -> IMPORTANT!!
-                    //Usefull for cooldown, I may add later!
-                    //Maybe even two days, idk, gotta ask Turbo
+                    //One hour in milliseconds = 3,600,000!
 
                     //message.channel.send(`${user.tag} joined the Pugs!`);
 
@@ -75,6 +73,8 @@ module.exports = {
                 });
 
                 crosscollector.on('collect', async (reaction, user) => {
+
+                    if (user.id === "830087071413567519") return;
 
                     message.channel.send('Canceled!');
 
