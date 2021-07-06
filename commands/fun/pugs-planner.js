@@ -49,9 +49,6 @@ module.exports = {
 
                     if (user.id === "830087071413567519") return;
 
-                    var i = 0; i<user; i++
-                    console.log(i);
-
                     /*
 
                     await message.channel.send(pugsembed).then(m => m.delete({
@@ -64,7 +61,7 @@ module.exports = {
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
-                        .setDescription(`Available users : ${i}`)
+                        .setDescription(`Available users : ${m.size}`)
                         .addField('Time', time)
                         .setTimestamp()
                         .setColor('GREEN')
@@ -78,8 +75,6 @@ module.exports = {
                     }, 5000);
 
                     //One hour in milliseconds = 3,600,000!
-
-                    //message.channel.send(`${user.tag} joined the Pugs!`);
 
                 });
 
