@@ -47,6 +47,7 @@ module.exports = {
                 collector.on('collect', async (reaction, user) => {
 
                     if (user.id === "830087071413567519") return;
+                    reaction.users.remove(user.id);
                     if (UserIDCount.has(user.id)) return;
 
                     i = i + 1 * 1
@@ -59,7 +60,6 @@ module.exports = {
                         .setColor('GREEN')
 
                     UserIDCount.add(user.id);
-                    reaction.users.remove(user.id);
                     m.edit(editpugs);
 
                     //One hour in milliseconds = 3,600,000!
@@ -74,6 +74,7 @@ module.exports = {
                 crosscollector.on('collect', async (reaction, user) => {
 
                     if (user.id === "830087071413567519") return;
+                    reaction.users.remove(user.id);
                     if (!UserIDCount.has(user.id)) return;
 
                     i = i - 1 * 1
@@ -91,7 +92,6 @@ module.exports = {
                         .setColor('GREEN')
 
                     UserIDCount.delete(user.id);
-                    reaction.users.remove(user.id);
                     m.edit(editpugs);
 
                 });
