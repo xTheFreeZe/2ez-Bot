@@ -41,7 +41,7 @@ client.on('message', async message => {
 
     if (cmd.length === 0) return;
 
-    let command = client.commands.get(cmd);  
+    let command = client.commands.get(cmd);
 
     if (command)
         command.run(client, message, args);
@@ -137,6 +137,23 @@ client.on('message', message => {
         client.emit('guildMemberAdd', message.member);
     }
 });
+
+client.on('message', message => {
+    let args = message.content.substring(PREFIX.length).split(" ");
+    let author = message.author
+
+    switch (args[0]) {
+        case "list":
+
+            const user = require("./commands/fun/pugs-planner");
+
+            if (!user) return message.channel.send('Seems like noone has signed up yet!');
+
+            message.channel.send(`Signed up : ${user}`);
+
+
+    }
+})
 
 client.on('message', msg => {
     let args = msg.content.substring(PREFIX.length).split(" ");
