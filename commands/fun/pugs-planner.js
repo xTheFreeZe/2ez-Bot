@@ -73,6 +73,7 @@ module.exports = {
                 crosscollector.on('collect', async (reaction, user) => {
 
                     if (user.id === "830087071413567519") return;
+                    if (!UserIDCount.has(user.id)) return;
 
                     i = i - 1 * 1
 
