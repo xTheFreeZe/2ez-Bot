@@ -87,8 +87,6 @@ module.exports = {
 
                     m.edit(editpugs);
 
-                    message.channel.send('Canceled!');
-
                 });
 
             })
