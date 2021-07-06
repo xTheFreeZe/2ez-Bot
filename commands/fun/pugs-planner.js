@@ -76,7 +76,7 @@ module.exports = {
 
                     if (user.id === "830087071413567519") return;
 
-                    if (user.id === !message.author.id) {
+                    if (!user.id == message.author.id) {
 
                         message.channel.send(`Only ${message.author.username} can cancel this message!`);
                         reaction.delete();
