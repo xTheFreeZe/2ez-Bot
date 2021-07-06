@@ -75,7 +75,7 @@ module.exports = {
 
                     if (i < 0) {
 
-                        i == '0';
+                        i = '0';
                     }
 
                     const editpugs = new MessageEmbed()
