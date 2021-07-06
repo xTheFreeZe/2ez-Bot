@@ -51,6 +51,7 @@ module.exports = {
                     if (user.id === "830087071413567519") return;
 
                     var users = i + 1
+                    console.log(users);
 
                     /*
 
