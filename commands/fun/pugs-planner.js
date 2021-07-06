@@ -59,7 +59,7 @@ module.exports = {
 
                         message.channel.send(`Signed up users : ${user.username}`);
 
-                    }, 10000);
+                    }, 5000);
 
                     //One hour in milliseconds = 3,600,000!
 
