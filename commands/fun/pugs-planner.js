@@ -69,6 +69,17 @@ module.exports = {
 
                 });
 
+                const crossfilter = (reaction, user) => reaction.emoji.name === '❌';
+                const crosscollector = m.createReactionCollector(crossfilter, {
+                    max: 100,
+                });
+
+                crosscollector.on('collect', async (reaction, user) => {
+
+                    message.channel.send('Canceled!');
+
+                });
+
             })
             .catch(err => console.error(err));
 
