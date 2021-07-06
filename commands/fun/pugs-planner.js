@@ -59,6 +59,7 @@ module.exports = {
                         .setColor('GREEN')
 
                     UserIDCount.add(user.id);
+                    reaction.delete();
                     m.edit(editpugs);
 
                     //One hour in milliseconds = 3,600,000!
@@ -90,6 +91,7 @@ module.exports = {
                         .setColor('GREEN')
 
                     UserIDCount.delete(user.id);
+                    reaction.delete();
                     m.edit(editpugs);
 
                 });
