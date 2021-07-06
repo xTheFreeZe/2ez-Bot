@@ -21,7 +21,6 @@ module.exports = {
         })
 
         if (!time) return message.channel.send('Time missing! Type *plan list to see who is signed up already!');
-        if (isNaN(time)) return message.channel.send('Please only provide numbers!');
 
         let pugsembed = new MessageEmbed()
             .setTitle(`${message.author.username}'s unoffical pugs`)
