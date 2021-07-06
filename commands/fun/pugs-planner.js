@@ -5,6 +5,7 @@ const {
 
 
 const Discord = require('discord.js');
+const UserIDCount = new Set();
 
 
 module.exports = {
@@ -46,6 +47,7 @@ module.exports = {
                 collector.on('collect', async (reaction, user) => {
 
                     if (user.id === "830087071413567519") return;
+                    if (UserIDCount.has(user.id)) return;
 
                     i = i + 1 * 1
 
@@ -56,6 +58,7 @@ module.exports = {
                         .setTimestamp()
                         .setColor('GREEN')
 
+                    UserIDCount.add(user.id);
                     m.edit(editpugs);
 
                     //One hour in milliseconds = 3,600,000!
@@ -85,6 +88,7 @@ module.exports = {
                         .setTimestamp()
                         .setColor('GREEN')
 
+                    UserIDCount.delete(user.id);
                     m.edit(editpugs);
 
                 });
