@@ -20,7 +20,7 @@ module.exports = {
             dynamic: true
         })
 
-        if (!time) return message.channel.send('Time missing! Type *plan list to see who is signed up already!');
+        if (!time) return message.channel.send('Time missing!');
 
         let pugsembed = new MessageEmbed()
             .setTitle(`${message.author.username}'s unoffical pugs`)
@@ -71,10 +71,6 @@ module.exports = {
 
             })
             .catch(err => console.error(err));
-
-        if (args[1] == 'list') {
-            message.channel.send(`This user has signed up : ${user}`);
-        }
 
     }
 }
