@@ -45,25 +45,9 @@ module.exports = {
 
                 collector.on('collect', async (reaction, user) => {
 
-
-
-                    pugsembed.setTitle(`${user.username} joined the Pugs!`);
-                    pugsembed.setDescription(`TEST`);
-                    pugsembed.setFooter(user.id)
-
                     if (user.id === "830087071413567519") return;
 
-                    /*
-
-                    await message.channel.send(pugsembed).then(m => m.delete({
-                        timeout: 5000
-                    })).catch(() => {
-                        message.channel.send('An unknown error occured!');
-                    })
-
-                    */
-
-                    i = i+1*1
+                    i = i + 1 * 1
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
@@ -73,12 +57,6 @@ module.exports = {
                         .setColor('GREEN')
 
                     m.edit(editpugs);
-
-                    setTimeout(() => {
-
-                        message.channel.send(`Signed up users : ${user.username}`);
-
-                    }, 5000);
 
                     //One hour in milliseconds = 3,600,000!
 
@@ -93,13 +71,21 @@ module.exports = {
 
                     if (user.id === "830087071413567519") return;
 
-                    if (!user.id == message.author.id) {
+                    i = i - 1 * 1
 
-                        message.channel.send(`Only ${message.author.username} can cancel this message!`);
-                        reaction.delete();
-                        return;
+                    if (i < 0) {
 
+                        i == '0';
                     }
+
+                    const editpugs = new MessageEmbed()
+                        .setTitle(`${message.author.username}'s unoffical pugs`)
+                        .setDescription(`Available users : ${i}`)
+                        .addField('Time', time)
+                        .setTimestamp()
+                        .setColor('GREEN')
+
+                    m.edit(editpugs);
 
                     message.channel.send('Canceled!');
 
