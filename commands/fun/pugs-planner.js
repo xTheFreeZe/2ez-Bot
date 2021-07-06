@@ -49,11 +49,24 @@ module.exports = {
 
                     if (user.id === "830087071413567519") return;
 
+                    /*
+
                     await message.channel.send(pugsembed).then(m => m.delete({
                         timeout: 5000
                     })).catch(() => {
                         message.channel.send('An unknown error occured!');
                     })
+
+                    */
+
+                    const editpugs = new MessageEmbed()
+                        .setTitle(`${message.author.username}'s unoffical pugs`)
+                        .setDescription(`${user}`)
+                        .addField('Time', time)
+                        .setTimestamp()
+                        .setColor('GREEN')
+
+                    m.edit(editpugs);
 
                     setTimeout(() => {
 
