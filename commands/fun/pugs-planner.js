@@ -110,7 +110,7 @@ module.exports = {
                     if (user.id === "830087071413567519") return;
                     reaction.users.remove(user.id);
 
-                    if (!user.id === message.author.id) {
+                    if (!user.id == message.author.id) {
 
                         return message.channel.send('Only the creator of the Pug can collaps this message');
 
