@@ -113,7 +113,7 @@ module.exports = {
 
                     if (user.id !== message.author.id) {
 
-                        return message.channel.send('Only the creator of the Pug can collaps this message');
+                        return message.channel.send(`Only the creator of the Pug (${message.author}) can collaps this message`);
 
                     } else {
 
