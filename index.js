@@ -138,21 +138,6 @@ client.on('message', message => {
     }
 });
 
-client.on('message', message => {
-    if (message.content === '*close') {
-
-        const {
-            UsedPlan
-        } = require("./commands/fun/pugs-planner");
-
-        if (!UsedPlan.has(message.author.id)) return message.channel.send('You did not plan any Pugs!');
-
-        process.exit();
-
-    }
-});
-
-
 client.on('message', msg => {
     let args = msg.content.substring(PREFIX.length).split(" ");
     let author = msg.author

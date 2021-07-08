@@ -29,7 +29,7 @@ module.exports = {
         let pugsembed = new MessageEmbed()
             .setTitle(`${message.author.username}'s unoffical pugs`)
             .setDescription('React below to enter the Pugs')
-            .addField('Time', time)                 
+            .addField('Time', time)
             .setFooter(`${message.author.username}`, avatar)
             .setTimestamp()
             .setColor('GREEN')
@@ -40,6 +40,7 @@ module.exports = {
             .then(m => {
                 m.react('✅');
                 m.react('❌');
+                m.react('🧨');
 
                 const filter = (reaction, user) => reaction.emoji.name === '✅'; // && user.id === message.author.id;
                 const collector = m.createReactionCollector(filter, {
@@ -95,6 +96,29 @@ module.exports = {
 
                     UserIDCount.delete(user.id);
                     m.edit(editpugs);
+
+                });
+
+
+                const crashfilter = (reaction, user) => reaction.emoji.name === '🧨';
+                const crashcollector = m.createReactionCollector(crashfilter, {
+                    max: 100,
+                });
+
+                crashcollector.on('collect', async (reaction, user) => {
+
+                    if (user.id === "830087071413567519") return;
+                    reaction.users.remove(user.id);
+
+                    if (!user.id === message.author.id) {
+
+                        return message.channel.send('Only the creator of the Pug can collaps this message');
+
+                    } else {
+
+                        process.exit(1);
+
+                    }
 
                 });
 
