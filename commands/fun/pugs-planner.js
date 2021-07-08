@@ -6,6 +6,7 @@ const {
 
 const Discord = require('discord.js');
 const UserIDCount = new Set();
+const UsedPlan = new Set();
 
 
 module.exports = {
@@ -28,11 +29,12 @@ module.exports = {
         let pugsembed = new MessageEmbed()
             .setTitle(`${message.author.username}'s unoffical pugs`)
             .setDescription('React below to enter the Pugs')
-            .addField('Time', time)
+            .addField('Time', time)                 
             .setFooter(`${message.author.username}`, avatar)
             .setTimestamp()
             .setColor('GREEN')
 
+        UsedPlan.add(message.author.id);
 
         message.channel.send(pugsembed)
             .then(m => {
