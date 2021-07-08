@@ -117,9 +117,7 @@ module.exports = {
 
                     } else {
 
-                        process.exit(1).then(() => {
-                            client.login(process.env.token);
-                        })
+                        message.channel.send('Closing...');
 
                     }
 
