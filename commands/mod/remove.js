@@ -9,7 +9,7 @@ module.exports = {
 
     run: async (client, message, args) => {
 
-        if (message.channel.id == '587956575315034114' || message.channel.id == '753693196680429698') {
+        if (message.channel.id == '587956575315034114' || message.channel.id == '587956575315034114') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -72,7 +72,7 @@ module.exports = {
 
                 const embed = new MessageEmbed()
                     .setTitle(`${roleName.name} was removed!`)
-                    .setDescription(`You updated the roles for ${member.displayName}`)
+                    .setDescription(`You updated the roles for **${member.displayName}**`)
                     .addField('Removed', `${roleName}`, true)
                     .addField('Role ID', `${roleName.id}`, true)
                     .setColor('GREEN')
