@@ -113,7 +113,7 @@ module.exports = {
 
                     if (user.id !== message.author.id) {
 
-                        return user.reply(`Only the creator of the Pug (${message.author.username}) can collaps this message`).then(message => message.delete({
+                        return message.channel.send(`> ${user} : Only the creator of the Pug (${message.author.username}) can collaps this message`).then(message => message.delete({
                             timeout: 5000
                         }));
 
