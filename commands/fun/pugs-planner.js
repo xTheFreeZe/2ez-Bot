@@ -120,7 +120,10 @@ module.exports = {
                     } else {
 
                         m.delete();
-                        message.channel.send('You Pug Message has been deleted!');
+                        message.delete()
+                        message.channel.send('You Pug Message has been deleted!').then(message => message.delete({
+                            timeout: 5000
+                        }))
 
                     }
 
