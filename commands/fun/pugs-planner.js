@@ -113,11 +113,14 @@ module.exports = {
 
                     if (user.id !== message.author.id) {
 
-                        return message.channel.send(`Only the creator of the Pug (${message.author.username}) can collaps this message`);
+                        return message.reply(`Only the creator of the Pug (${message.author.username}) can collaps this message`).then(message => message.delete({
+                            timeout: 5000
+                        }));
 
                     } else {
 
-                        message.channel.send('Closing...');
+                        m.delete();
+                        message.channel.send('You Pug Message has been deleted!');
 
                     }
 
