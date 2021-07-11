@@ -15,7 +15,12 @@ const SniffCheck = new Set;
 
 client.on('ready', () => {
     const channel = client.channels.cache.get('589929952837894144');
+    const rebootAdminchannel = client.channels.cache.get('753693196680429698');
+    let restartembed = new MessageEmbed()
+        .setDescription('Bot restarted!')
+        .setColor('RANDOM')
     console.log("Ready to welcome some people!")
+    rebootAdminchannel.send(restartembed);
     client.user.setActivity(`with ${channel.guild.memberCount} people!`)
 });
 
