@@ -94,7 +94,7 @@ module.exports = {
                     m.edit(editpugs);
 
                     //One hour in milliseconds = 3,600,000!
-<
+
                 });
 
                 const crossfilter = (reaction, user) => reaction.emoji.name === '❌';
