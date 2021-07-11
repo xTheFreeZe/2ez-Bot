@@ -44,11 +44,6 @@ module.exports = {
             dynamic: true
         });
 
-        let useravatar = user.displayAvatarURL({
-            format: 'png',
-            dynamic: true
-        });
-
         if (!time) return message.channel.send('Time missing!');
 
         var i = 0;
@@ -75,6 +70,11 @@ module.exports = {
                 });
 
                 collector.on('collect', async (reaction, user) => {
+
+                    let useravatar = user.displayAvatarURL({
+                        format: 'png',
+                        dynamic: true
+                    });
 
                     if (user.id === "830087071413567519") return;
                     reaction.users.remove(user.id);
