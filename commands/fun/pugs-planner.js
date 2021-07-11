@@ -15,12 +15,39 @@ module.exports = {
 
         let args = message.content.substring(PREFIX.length).split(" ");
 
-        let time = args.slice(1).join(" ");
+        var time = args.slice(1).join(" ");
+
+        if (isNaN(time)) {
+
+            message.channel.send('Please only provide numbers! Example : *plan 20 ( All times in CEST ) ').then(m => (message.delete({
+                timeout: 10000
+            })))
+            return;
+
+        }
+
+        if (time > 24) {
+
+            message.channel.send('Please keep your time in the following format : 0 - 24');
+
+        }
+
+        if (time < 0) {
+
+            message.channel.send('Please keep your time in the following format : 0 - 24');
+
+        }
+
 
         let avatar = message.author.displayAvatarURL({
             format: 'png',
             dynamic: true
-        })
+        });
+
+        let useravatar = user.displayAvatarURL({
+            format: 'png',
+            dynamic: true
+        });
 
         if (!time) return message.channel.send('Time missing!');
 
@@ -29,7 +56,7 @@ module.exports = {
         let pugsembed = new MessageEmbed()
             .setTitle(`${message.author.username}'s unoffical pugs`)
             .setDescription('React below to enter the Pugs')
-            .addField('Time', time)
+            .addField('Time', `${time} CEST`)
             .setFooter(`${message.author.username}`, avatar)
             .setTimestamp()
             .setColor('GREEN')
@@ -59,6 +86,7 @@ module.exports = {
                         .setTitle(`${message.author.username}'s unoffical pugs`)
                         .setDescription(`Available users : ${i}`)
                         .addField('Time', time)
+                        .setFooter(`${user.username}`, useravatar)
                         .setTimestamp()
                         .setColor('GREEN')
 
