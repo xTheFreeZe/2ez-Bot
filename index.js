@@ -229,7 +229,11 @@ client.on('message', message => {
         const channel = client.channels.cache.get('589929952837894144');
         const welcomechannel = client.channels.cache.get('585883817458401342');
 
-        message.channel.send(`${message.guild.name} has ${message.guild.memberCount} members!`);
+        const embed = new MessageEmbed()
+            .setDescription(`${message.guild.name} has **${message.guild.memberCount}** members!`)
+            .setColor('RANDOM')
+
+        message.channel.send(embed);
     }
 });
 
