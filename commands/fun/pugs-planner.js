@@ -29,12 +29,14 @@ module.exports = {
         if (time > 24) {
 
             message.channel.send('Please keep your time in the following format : 0 - 24');
+            return;
 
         }
 
         if (time < 0) {
 
             message.channel.send('Please keep your time in the following format : 0 - 24');
+            return;
 
         }
 
