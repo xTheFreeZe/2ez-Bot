@@ -94,7 +94,7 @@ module.exports = {
                     m.edit(editpugs);
 
                     //One hour in milliseconds = 3,600,000!
-
+<
                 });
 
                 const crossfilter = (reaction, user) => reaction.emoji.name === '❌';
@@ -149,7 +149,7 @@ module.exports = {
 
                         m.delete();
                         message.delete()
-                        message.channel.send('You Pug Message has been deleted!').then(message => message.delete({
+                        message.channel.send('Your Pug Message has been deleted!').then(message => message.delete({
                             timeout: 5000
                         }))
 
