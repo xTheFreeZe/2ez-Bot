@@ -72,7 +72,7 @@ module.exports = {
 
                 const embed = new MessageEmbed()
                     .setTitle(`${roleName.name} was removed!`)
-                    .setDescription(`You updated the roles for **${member.displayName}**`)
+                    .setDescription(`You updated the roles for **${member}**`)
                     .addField('Removed', `${roleName}`, true)
                     .addField('Role ID', `${roleName.id}`, true)
                     .setColor('GREEN')

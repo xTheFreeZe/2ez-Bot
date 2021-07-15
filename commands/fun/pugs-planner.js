@@ -19,7 +19,7 @@ module.exports = {
 
         if (isNaN(time)) {
 
-            message.channel.send('Please only provide numbers! Example : *plan 20 ( All times in CEST ) ').then(m => (message.delete({
+            message.channel.send('Please only provide numbers! Example : *plan 20 ( All times in CEST ) ').then(m => (m.delete({
                 timeout: 10000
             })))
             return;
