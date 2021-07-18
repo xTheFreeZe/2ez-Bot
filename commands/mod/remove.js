@@ -75,6 +75,7 @@ module.exports = {
                     .setDescription(`You updated the roles for **${member}**`)
                     .addField('Removed', `${roleName}`, true)
                     .addField('Role ID', `${roleName.id}`, true)
+                    .addField('User ID', `${member.id}`, true)
                     .setColor('GREEN')
                     .setTimestamp()
                     .setFooter(`${message.author.username}`)
@@ -88,6 +89,7 @@ module.exports = {
 
                     embed.setTitle('ERROR')
                     embed.setDescription('>' + " " + e)
+                    embed.setFooter('Action failed!')
                     embed.setColor('RED')
 
 

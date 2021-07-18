@@ -10,7 +10,7 @@ module.exports = {
     run: async (client, message, args) => {
 
 
-        if (message.channel.id == '587956575315034114' || message.channel.id == '753693196680429698') {
+        if (message.channel.id == '821393051561361493' || message.channel.id == '753693196680429698') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -82,6 +82,7 @@ module.exports = {
                     .setDescription(`You updated the roles for **${member}**`)
                     .addField('Added', `${roleName}`, true)
                     .addField('Role ID', `${roleName.id}`, true)
+                    .addField('User ID', `${member.id}`, true)
                     .setColor('GREEN')
                     .setTimestamp()
                     .setFooter(`${message.author.username}`)
@@ -95,6 +96,7 @@ module.exports = {
 
                     embed.setTitle('ERROR')
                     embed.setDescription('>' + " " + e)
+                    embed.setFooter('Action failed!')
                     embed.setColor('RED')
 
 
