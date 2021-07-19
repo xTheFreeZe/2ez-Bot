@@ -235,7 +235,7 @@ client.on('message', message => {
         const welcomechannel = client.channels.cache.get('585883817458401342');
 
         const embed = new MessageEmbed()
-            .setDescription(`${message.guild.name} has **${message.guild.memberCount}** members!`)
+            .setDescription(`${message.guild.name} has **${message.guild.memberCount}** members.`)
             .setColor('RANDOM')
 
         message.channel.send(embed);
