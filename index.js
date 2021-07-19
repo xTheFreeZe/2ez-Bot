@@ -227,6 +227,15 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+    if (message.content.includes("<:FDD_Approved:866074277878038568>")) {
+
+        if (message.author.bot) return;
+
+        message.react('<:FDD_Approved:866074277878038568>');
+    }
+});
+
 
 client.on('message', message => {
     if (message.content === '*members') {
