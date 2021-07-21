@@ -79,7 +79,7 @@ module.exports = {
                         dynamic: true
                     });
 
-                    if (user.id === "770299719733215253") return;
+                    if (user.id === "830087071413567519") return;
                     reaction.users.remove(user.id);
                     if (UserIDCount.has(user.id)) return;
 
@@ -107,7 +107,7 @@ module.exports = {
 
                 crosscollector.on('collect', async (reaction, user) => {
 
-                    if (user.id === "770299719733215253") return;
+                    if (user.id === "830087071413567519") return;
                     reaction.users.remove(user.id);
                     if (!UserIDCount.has(user.id)) return;
 
@@ -138,7 +138,7 @@ module.exports = {
 
                 resetcollector.on('collect', async (reaction, user) => {
 
-                    if (user.id === "770299719733215253") return;
+                    if (user.id === "830087071413567519") return;
 
                     await reaction.users.remove(user.id);
 
@@ -172,7 +172,7 @@ module.exports = {
 
                 crashcollector.on('collect', async (reaction, user) => {
 
-                    if (user.id === "770299719733215253") return;
+                    if (user.id === "830087071413567519") return;
 
                     await reaction.users.remove(user.id);
 
