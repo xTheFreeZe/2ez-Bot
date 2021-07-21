@@ -20,7 +20,7 @@ client.on('ready', () => {
         .setDescription('Bot restarted!')
         .setColor('RANDOM')
     console.log("Ready to welcome some people!")
-   // rebootAdminchannel.send(restartembed);
+   rebootAdminchannel.send(restartembed);
     client.user.setActivity(`with ${channel.guild.memberCount} people!`)
 });
 

@@ -145,15 +145,10 @@ module.exports = {
                     if (user.id !== message.author.id) {
 
                         return message.channel.send(`Only the creator of the Pug (${message.author.username}) can reset the Pug!`).then(message => message.delete({
-                            timeout: 5000
+                            timeout: 3000
                         }));
 
                     }
-
-                    const resetembed = new MessageEmbed()
-                        .setTitle('Count set to 0!')
-                        .setDescription('The number of people that reacted has been set to 0.')
-                        .setColor('RANDOM')
 
                     if (i = 0) return message.channel.send('The counter already is at 0!');
 
@@ -170,8 +165,8 @@ module.exports = {
 
                     m.edit(editpugs);
 
-                    message.channel.send(resetembed).then(message => message.delete({
-                        timeout: 5000
+                    message.channel.send("Counter is back to 0.").then(message => message.delete({
+                        timeout: 3000
                     }));
 
                 });
