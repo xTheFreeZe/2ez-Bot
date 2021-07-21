@@ -64,6 +64,7 @@ module.exports = {
             .then(m => {
                 m.react('✅');
                 m.react('❌');
+                m.react('🔁');
                 m.react('🧨');
 
                 const filter = (reaction, user) => reaction.emoji.name === '✅'; // && user.id === message.author.id;
@@ -78,7 +79,7 @@ module.exports = {
                         dynamic: true
                     });
 
-                    if (user.id === "830087071413567519") return;
+                    if (user.id === "770299719733215253") return;
                     reaction.users.remove(user.id);
                     if (UserIDCount.has(user.id)) return;
 
@@ -86,8 +87,8 @@ module.exports = {
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
-                        .setDescription(`Available users : ${i}`)
-                        .addField('Time', time)
+                        .setDescription(`Available users : ${i}`) // ${i}
+                        .addField('Time', time) // time
                         .setFooter(`${user.username}`, useravatar)
                         .setTimestamp()
                         .setColor('GREEN')
@@ -106,7 +107,7 @@ module.exports = {
 
                 crosscollector.on('collect', async (reaction, user) => {
 
-                    if (user.id === "830087071413567519") return;
+                    if (user.id === "770299719733215253") return;
                     reaction.users.remove(user.id);
                     if (!UserIDCount.has(user.id)) return;
 
@@ -130,6 +131,40 @@ module.exports = {
                 });
 
 
+                const resetfilter = (reaction, user) => reaction.emoji.name === '🔁';
+                const resetcollector = m.createReactionCollector(resetfilter, {
+                    max: 100,
+                });
+
+                resetcollector.on('collect', async (reaction, user) => {
+
+                    if (user.id === "770299719733215253") return;
+
+                    await reaction.users.remove(user.id);
+
+                    if (user.id !== message.author.id) {
+
+                        return message.channel.send(`Only the creator of the Pug (${message.author.username}) can reset the Pug!`).then(message => message.delete({
+                            timeout: 5000
+                        }));
+
+                    }
+
+                    const resetembed = new MessageEmbed()
+                        .setTitle('Count set to 0!')
+                        .setDescription('The number of people that reacted has been set to 0.')
+                        .setColor('RANDOM')
+
+
+                    i = 0;
+
+                    message.channel.send(resetembed).then(message => message.delete({
+                        timeout: 5000
+                    }));
+
+                });
+
+
                 const crashfilter = (reaction, user) => reaction.emoji.name === '🧨';
                 const crashcollector = m.createReactionCollector(crashfilter, {
                     max: 100,
@@ -137,7 +172,7 @@ module.exports = {
 
                 crashcollector.on('collect', async (reaction, user) => {
 
-                    if (user.id === "830087071413567519") return;
+                    if (user.id === "770299719733215253") return;
 
                     await reaction.users.remove(user.id);
 
