@@ -155,6 +155,8 @@ module.exports = {
                         .setDescription('The number of people that reacted has been set to 0.')
                         .setColor('RANDOM')
 
+                    if (i = 0) return message.channel.send('The counter already is at 0!');
+
 
                     i = 0;
 
