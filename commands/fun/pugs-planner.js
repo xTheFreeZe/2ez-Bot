@@ -158,6 +158,16 @@ module.exports = {
 
                     i = 0;
 
+                    const editpugs = new MessageEmbed()
+                        .setTitle(`${message.author.username}'s unoffical pugs`)
+                        .setDescription(`Available users : ${i}`) // ${i}
+                        .addField('Time', time) // time
+                        .setFooter(`${message.author.username}`, avatar)
+                        .setTimestamp()
+                        .setColor('GREEN')
+
+                    m.edit(editpugs);
+
                     message.channel.send(resetembed).then(message => message.delete({
                         timeout: 5000
                     }));
