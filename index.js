@@ -240,8 +240,6 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content.includes("sus")) {
 
-        var x = 0;
-
         if (message.author.bot) return;
 
         if (message.author.id !== "420277395036176405") return;
