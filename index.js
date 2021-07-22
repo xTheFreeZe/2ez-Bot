@@ -236,23 +236,6 @@ client.on('message', message => {
     }
 });
 
-
-client.on('message', message => {
-    if (message.content.includes("sus")) {
-
-        if (message.author.bot) return;
-
-        if (message.author.id !== "420277395036176405") return;
-
-        x = x + 1 * 1;
-
-        message.channel.send(`Coin said **sus** ${x} times!`);
-
-
-    }
-});
-
-
 client.on('message', message => {
     if (message.content === '*members') {
 
