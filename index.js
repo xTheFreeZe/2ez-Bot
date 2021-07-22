@@ -8,6 +8,7 @@ const {
 
 const PREFIX = '*';
 const SniffCheck = new Set;
+var x = 0;
 
 
 
@@ -20,7 +21,7 @@ client.on('ready', () => {
         .setDescription('Bot restarted!')
         .setColor('RANDOM')
     console.log("Ready to welcome some people!")
-   rebootAdminchannel.send(restartembed);
+    //rebootAdminchannel.send(restartembed);
     client.user.setActivity(`with ${channel.guild.memberCount} people!`)
 });
 
@@ -233,6 +234,22 @@ client.on('message', message => {
         if (message.author.bot) return;
 
         message.react('<:FDD_Approved:866074277878038568>');
+    }
+});
+
+
+client.on('message', message => {
+    if (message.content.includes("sus")) {
+
+        if (message.author.bot) return;
+
+        if (message.author.id !== "420277395036176405") return;
+
+        x + 1 * 1;
+
+        message.channel.send(`Coin said **sus** ${x} times!`);
+
+
     }
 });
 
