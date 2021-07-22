@@ -8,7 +8,6 @@ const {
 
 const PREFIX = '*';
 const SniffCheck = new Set;
-var x = 0;
 
 
 
@@ -241,11 +240,13 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content.includes("sus")) {
 
+        var x = 0;
+
         if (message.author.bot) return;
 
         if (message.author.id !== "420277395036176405") return;
 
-        x + 1 * 1;
+        x = x + 1 * 1;
 
         message.channel.send(`Coin said **sus** ${x} times!`);
 
