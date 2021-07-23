@@ -144,7 +144,7 @@ module.exports = {
 
                     if (user.id !== message.author.id) {
 
-                        return message.channel.send(`Only the creator of the Pug (${message.author.username}) can reset the Pug!`).then(message => message.delete({
+                        return message.channel.send(`> ${user}: Only the creator of the Pug (${message.author.username}) can reset the Counter!`).then(message => message.delete({
                             timeout: 3000
                         }));
 
@@ -154,6 +154,7 @@ module.exports = {
 
 
                     i = 0;
+                    UserIDCount.remove(user.id);
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
@@ -185,7 +186,7 @@ module.exports = {
 
                     if (user.id !== message.author.id) {
 
-                        return message.channel.send(`> ${user} : Only the creator of the Pug (${message.author.username}) can collaps this message`).then(message => message.delete({
+                        return message.channel.send(`> ${user}: Only the creator of the Pug (${message.author.username}) can collaps this message`).then(message => message.delete({
                             timeout: 5000
                         }));
 
