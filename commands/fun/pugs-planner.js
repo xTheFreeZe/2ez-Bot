@@ -154,7 +154,7 @@ module.exports = {
 
 
                     i = 0;
-                    UserIDCount.remove(user.id);
+                    UserIDCount.delete(user.id);
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
