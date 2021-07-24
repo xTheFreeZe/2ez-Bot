@@ -7,6 +7,7 @@ const {
 const Discord = require('discord.js');
 const UserIDCount = new Set();
 const UsedPlan = new Set();
+const userNames = new String();
 
 
 module.exports = {
@@ -118,10 +119,13 @@ module.exports = {
                         i = 0;
                     }
 
+                    userNames.add(user.username);
+
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
                         .setDescription(`Available users : ${i}`)
                         .addField('Time', time)
+                        .addField('Users', userNames)
                         .setTimestamp()
                         .setColor('GREEN')
 
