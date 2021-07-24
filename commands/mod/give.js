@@ -10,7 +10,7 @@ module.exports = {
     run: async (client, message, args) => {
 
 
-        if (message.channel.id == '587956575315034114' || message.channel.id == '753693196680429698') {
+        if (message.channel.id == '821393051561361493' || message.channel.id == '753693196680429698') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -76,7 +76,7 @@ module.exports = {
                     if (!message.member.roles.cache.some(role => role.name === roleName.name)) return message.channel.send(Dontownrole);
 
                 }
-
+                /*
                 const embed = new MessageEmbed()
                     .setTitle(`${roleName.name} was transferred!`)
                     .setDescription(`You updated the roles for **${member}**`)
@@ -88,6 +88,17 @@ module.exports = {
                     .setThumbnail(member.user.displayAvatarURL({
                         dynamic: true
                     }))
+
+                */
+
+                const embed = new MessageEmbed()
+                    .setDescription(`Added ${roleName.name} to ${member}`)
+                    .setColor('RANDOM')
+                    .setThumbnail(member.user.displayAvatarURL({
+                        dynamic: true
+                    }))
+                    .setFooter(`User ID: ${member.id}`)
+                    .setTimestamp()
 
                 return member.roles.add(roleName).catch((e) => {
 
@@ -123,7 +134,7 @@ module.exports = {
         } else {
 
             console.log('*GIVE was used in the wrong channel!');
-            message.channel.send('126');
+            message.channel.send('Please wait! This command is currently in Maintencance mode.');
             return;
 
         }

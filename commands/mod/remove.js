@@ -9,7 +9,7 @@ module.exports = {
 
     run: async (client, message, args) => {
 
-        if (message.channel.id == '587956575315034114' || message.channel.id == '753693196680429698') {
+        if (message.channel.id == '821393051561361493' || message.channel.id == '753693196680429698') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -69,7 +69,7 @@ module.exports = {
 
                 }
 
-
+                /*
                 const embed = new MessageEmbed()
                     .setTitle(`${roleName.name} was removed!`)
                     .setDescription(`You updated the roles for **${member}**`)
@@ -81,6 +81,16 @@ module.exports = {
                     .setThumbnail(member.user.displayAvatarURL({
                         dynamic: true
                     }))
+                */
+
+                const embed = new MessageEmbed()
+                    .setDescription(`Removed ${roleName.name} from ${member}`)
+                    .setColor('RANDOM')
+                    .setThumbnail(member.user.displayAvatarURL({
+                        dynamic: true
+                    }))
+                    .setFooter(`User ID: ${member.id}`)
+                    .setTimestamp()
 
                 return member.roles.remove(roleName).catch((e) => {
 
@@ -114,7 +124,7 @@ module.exports = {
         } else {
 
             console.log('*RETURN was used in the wrong channel!');
-            message.channel.send('You cant use this command here! This is only available in specific channels!');
+            message.channel.send('Please wait! This command is currently in Maintencance mode.');
             return;
 
         }
