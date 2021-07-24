@@ -95,12 +95,16 @@ module.exports = {
                     dynamic: true
                 })
 
+                let authorAvatar = author.user.displayAvatarURL({
+                    dynamic: true
+                })
+
                 const embed = new MessageEmbed()
                     .setTitle(`${roleName.name} was transferred`)
                     .setDescription(`Gave **${roleName.name}** to ${member}`)
                     .setThumbnail(memberAvatar)
                     .setColor('RANDOM')
-                    .setFooter(`User ID: ${member.id}`)
+                    .setFooter(`User ID: ${member.id}`, authorAvatar)
                     .setTimestamp()
 
                 return member.roles.add(roleName).catch((e) => {
