@@ -7,7 +7,6 @@ const {
 const Discord = require('discord.js');
 const UserIDCount = new Set();
 const UsedPlan = new Set();
-const userNames = new String();
 
 
 module.exports = {
@@ -119,7 +118,11 @@ module.exports = {
                         i = 0;
                     }
 
-                    userNames.add(user.username);
+                    var userNames = [
+                        "test",
+                    ];
+
+                    userNames.push(user.username);
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
