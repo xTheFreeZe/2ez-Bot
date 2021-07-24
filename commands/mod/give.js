@@ -91,7 +91,7 @@ module.exports = {
 
                 */
 
-                let memberAvatar = member.displayAvatarURL({
+                let memberAvatar = member.user.displayAvatarURL({
                     dynamic: true
                 })
 
