@@ -126,8 +126,14 @@ module.exports = {
                     }
 
                     var userNamesNO = [
-
+                        "Users",
                     ];
+
+                    var userNamesNOsecond = [
+                        user.username,
+                    ]
+
+                    const userNamesNOfinal = userNamesNO.concat(userNamesNOsecond);
 
                     userNamesNO.push(user.username);
 
@@ -135,7 +141,7 @@ module.exports = {
                         .setTitle(`${message.author.username}'s unoffical pugs`)
                         .setDescription(`Available users : ${i}`)
                         .addField('Time', time)
-                        .addField('Not available', userNamesNO)
+                        .addField('Not available', userNamesNOfinal)
                         .setTimestamp()
                         .setColor('GREEN')
 
