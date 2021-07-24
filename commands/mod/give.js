@@ -96,7 +96,7 @@ module.exports = {
                 })
 
                 const embed = new MessageEmbed()
-                    .setDescription(`Added ${roleName.name} to ${member}`)
+                    .setDescription(`Gave **${roleName.name}** to ${member}`)
                     .setColor('RANDOM')
                     .setFooter(`User ID: ${member.id}`, memberAvatar)
                     .setTimestamp()

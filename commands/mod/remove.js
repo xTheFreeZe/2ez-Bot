@@ -88,7 +88,7 @@ module.exports = {
                 })
 
                 const embed = new MessageEmbed()
-                    .setDescription(`Removed ${roleName.name} from ${member}`)
+                    .setDescription(`Removed **${roleName.name}** from ${member}`)
                     .setColor('RANDOM')
                     .setFooter(`User ID: ${member.id}`, memberAvatar)
                     .setTimestamp()
