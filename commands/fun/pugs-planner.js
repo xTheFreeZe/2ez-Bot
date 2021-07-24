@@ -119,7 +119,7 @@ module.exports = {
                     }
 
                     var userNames = [
-                        "test",
+                        
                     ];
 
                     userNames.push(user.username);
