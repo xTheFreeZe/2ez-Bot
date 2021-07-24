@@ -88,7 +88,7 @@ module.exports = {
                 })
 
                 const embed = new MessageEmbed()
-                    .setTitle(`${roleName} was removed`)
+                    .setTitle(`${roleName.name} was removed`)
                     .setDescription(`Removed **${roleName.name}** from ${member}`)
                     .setThumbnail(memberAvatar)
                     .setColor('RANDOM')

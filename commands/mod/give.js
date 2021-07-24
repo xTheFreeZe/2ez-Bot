@@ -96,7 +96,7 @@ module.exports = {
                 })
 
                 const embed = new MessageEmbed()
-                    .setTitle(`${roleName} was transferred`)
+                    .setTitle(`${roleName.name} was transferred`)
                     .setDescription(`Gave **${roleName.name}** to ${member}`)
                     .setThumbnail(memberAvatar)
                     .setColor('RANDOM')
