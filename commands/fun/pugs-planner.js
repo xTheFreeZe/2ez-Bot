@@ -129,7 +129,7 @@ module.exports = {
 
                     ];
 
-                    userNames.push(user.username);
+                    userNamesNO.push(user.username);
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
