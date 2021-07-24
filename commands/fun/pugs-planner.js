@@ -81,14 +81,21 @@ module.exports = {
 
                     if (user.id === "830087071413567519") return;
                     reaction.users.remove(user.id);
-                    if (UserIDCount.has(user.id)) return;
+                    //if (UserIDCount.has(user.id)) return;
 
                     i = i + 1 * 1
+
+                    var userNamesYES = [
+
+                    ];
+
+                    userNamesYES.push(user.username);
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
                         .setDescription(`Available users : ${i}`) // ${i}
-                        .addField('Time', time) // time
+                        .addField('Time', time) 
+                        .addField('Available', userNamesYES)
                         .setFooter(`${user.username}`, useravatar)
                         .setTimestamp()
                         .setColor('GREEN')
@@ -109,7 +116,7 @@ module.exports = {
 
                     if (user.id === "830087071413567519") return;
                     reaction.users.remove(user.id);
-                    if (!UserIDCount.has(user.id)) return;
+                   // if (!UserIDCount.has(user.id)) return;
 
                     i = i - 1 * 1
 
@@ -118,8 +125,8 @@ module.exports = {
                         i = 0;
                     }
 
-                    var userNames = [
-                        
+                    var userNamesNO = [
+
                     ];
 
                     userNames.push(user.username);
@@ -128,7 +135,7 @@ module.exports = {
                         .setTitle(`${message.author.username}'s unoffical pugs`)
                         .setDescription(`Available users : ${i}`)
                         .addField('Time', time)
-                        .addField('Users', userNames)
+                        .addField('Not available', userNamesNO)
                         .setTimestamp()
                         .setColor('GREEN')
 
