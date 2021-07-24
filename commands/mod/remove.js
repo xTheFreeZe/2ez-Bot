@@ -9,7 +9,7 @@ module.exports = {
 
     run: async (client, message, args) => {
 
-        if (message.channel.id == '587956575315034114' || message.channel.id == '753693196680429698') {
+        if (message.channel.id == '587956575315034114' || message.channel.id == '821393051561361493') {
 
             let useembed = new MessageEmbed()
                 .setTitle('Incorrect Usage')
@@ -88,9 +88,11 @@ module.exports = {
                 })
 
                 const embed = new MessageEmbed()
+                    .setTitle(`${roleName} was removed`)
                     .setDescription(`Removed **${roleName.name}** from ${member}`)
+                    .setThumbnail(memberAvatar)
                     .setColor('RANDOM')
-                    .setFooter(`User ID: ${member.id}`, memberAvatar)
+                    .setFooter(`User ID: ${member.id}`)
                     .setTimestamp()
 
                 return member.roles.remove(roleName).catch((e) => {
