@@ -87,12 +87,17 @@ module.exports = {
                     dynamic: true
                 })
 
+                let avatar = message.author.displayAvatarURL({
+                    format: 'png',
+                    dynamic: true
+                });
+
                 const embed = new MessageEmbed()
                     .setTitle(`${roleName.name} was removed`)
                     .setDescription(`Removed **${roleName.name}** from ${member}`)
                     .setThumbnail(memberAvatar)
                     .setColor('RANDOM')
-                    .setFooter(`User ID: ${member.id}`)
+                    .setFooter(`User ID: ${member.id}`, avatar)
                     .setTimestamp()
 
                 return member.roles.remove(roleName).catch((e) => {
