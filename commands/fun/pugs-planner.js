@@ -17,6 +17,14 @@ module.exports = {
 
         var time = args.slice(1).join(" ");
 
+        let availableUserArray = [
+
+        ];
+
+        let unavailableUserArray = [
+
+        ]
+
         if (isNaN(time)) {
 
             message.channel.send('Please only provide numbers! Example : *plan 20 ( All times in CEST ) ').then(m => (m.delete({
@@ -85,17 +93,13 @@ module.exports = {
 
                     i = i + 1 * 1
 
-                    var userNamesYES = [
-
-                    ];
-
-                    userNamesYES.push(user.username);
+                    availableUserArray.push(user.username);
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
                         .setDescription(`Available users : ${i}`) // ${i}
                         .addField('Time', time)
-                        .addField('Available', userNamesYES)
+                        .addField('Available', availableUserArray)
                         .setFooter(`${user.username}`, useravatar)
                         .setTimestamp()
                         .setColor('GREEN')
@@ -125,23 +129,13 @@ module.exports = {
                         i = 0;
                     }
 
-                    var userNamesNO = [
-                        "Users",
-                    ];
-
-                    var userNamesNOsecond = [
-                        user.username,
-                    ]
-
-                    const userNamesNOfinal = userNamesNO.concat(userNamesNOsecond);
-
-                    userNamesNO.push(user.username);
+                    unavailableUserArray.push(user.username);
 
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
                         .setDescription(`Available users : ${i}`)
                         .addField('Time', time)
-                        .addField('Not available', userNamesNOfinal)
+                        .addField('Not available', unavailableUserArray)
                         .setTimestamp()
                         .setColor('GREEN')
 
