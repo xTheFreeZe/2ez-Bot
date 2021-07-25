@@ -52,7 +52,7 @@ module.exports = {
 
         let pugsembed = new MessageEmbed()
             .setTitle(`${message.author.username}'s unoffical pugs`)
-            .setDescription('React below to enter the Pugs')
+            .setDescription('React below to enter the Pugs!')
             .addField('Time', `${time} CEST`)
             .setFooter(`${message.author.username}`, avatar)
             .setTimestamp()
@@ -94,7 +94,7 @@ module.exports = {
                     const editpugs = new MessageEmbed()
                         .setTitle(`${message.author.username}'s unoffical pugs`)
                         .setDescription(`Available users : ${i}`) // ${i}
-                        .addField('Time', time) 
+                        .addField('Time', time)
                         .addField('Available', userNamesYES)
                         .setFooter(`${user.username}`, useravatar)
                         .setTimestamp()
@@ -144,6 +144,8 @@ module.exports = {
                         .addField('Not available', userNamesNOfinal)
                         .setTimestamp()
                         .setColor('GREEN')
+
+                    if (i = 0) editpugs.setDescription('React below to enter the Pugs!');
 
                     UserIDCount.delete(user.id);
                     m.edit(editpugs);
