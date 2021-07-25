@@ -18,11 +18,11 @@ module.exports = {
         var time = args.slice(1).join(" ");
 
         let availableUserArray = [
-            "."
+            "**⬇**"
         ];
 
         let unavailableUserArray = [
-            "."
+            "**⬇**"
         ]
 
         if (isNaN(time)) {
