@@ -121,13 +121,19 @@ module.exports = {
 
                     if (user.id === "830087071413567519") return;
                     reaction.users.remove(user.id);
-                    if (!UserIDCount.has(user.id)) return;
+                    if (!UserIDCount.has(user.id)) i - 0;
 
                     i = i - 1 * 1
 
                     if (i < 0) {
 
                         i = 0;
+                    }
+
+                    if (UserIDCount.has(user.id)) {
+
+                        availableUserArray.slice(user.username);
+
                     }
 
                     unavailableUserArray.push(user.username);
