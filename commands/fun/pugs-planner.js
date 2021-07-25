@@ -100,6 +100,7 @@ module.exports = {
                         .setDescription(`Available users : ${i}`) // ${i}
                         .addField('Time', time)
                         .addField('Available', availableUserArray)
+                        .addField('Unavailable', unavailableUserArray)
                         .setFooter(`${user.username}`, useravatar)
                         .setTimestamp()
                         .setColor('GREEN')
@@ -135,7 +136,8 @@ module.exports = {
                         .setTitle(`${message.author.username}'s unoffical pugs`)
                         .setDescription(`Available users : ${i}`)
                         .addField('Time', time)
-                        .addField('Not available', unavailableUserArray)
+                        .addField('Available', availableUserArray)
+                        .addField('Unavailable', unavailableUserArray)
                         .setTimestamp()
                         .setColor('GREEN')
 
