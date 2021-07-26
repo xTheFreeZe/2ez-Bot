@@ -129,7 +129,7 @@ module.exports = {
                 });
 
                 crashcollector.on('collect', async (reaction, user) => {
-                    
+
                     if (user.id === "830087071413567519") return;
                     reaction.users.remove(user.id);
 
@@ -141,14 +141,14 @@ module.exports = {
 
                     }
 
+                    m.delete().catch((e) => {
+                        console.log(e)
+                    })
+
                     message.delete().catch(() => {
                         message.channel.send('Your message was already deleted').thhen(message => message.delete({
                             timeout: 2000
                         }))
-                    })
-
-                    m.delete().catch((e) => {
-                        console.log(e)
                     })
 
 
