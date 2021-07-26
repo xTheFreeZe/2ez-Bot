@@ -104,7 +104,7 @@ module.exports = {
 
                     if (!UserIDCount.has(user.id)) {
 
-                        xno = xno - 0
+                        xno = xno - 1
 
                     }
 
