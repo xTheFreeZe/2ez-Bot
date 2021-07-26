@@ -47,11 +47,13 @@ module.exports = {
                     if (user.id === "830087071413567519") return;
                     reaction.users.remove(user.id);
 
+/*
                     if (!UserIDCount.has(user.id)) {
 
                         xno = xno - 1;
 
                     }
+                    */
 
                     if (UserIDCount.has(user.id)) return;
 
