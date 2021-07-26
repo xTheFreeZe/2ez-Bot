@@ -25,6 +25,12 @@ module.exports = {
             .setTimestamp()
             .setColor('BLUE')
 
+        let nosuggestion = new MessageEmbed()   
+            .setDescription('Please provide a suggestion!')
+            .setColor('RED')
+
+        if (!suggestion) return message.channel.send(nosuggestion);
+
 
         message.channel.send(suggestionembed)
             .then(m => {
