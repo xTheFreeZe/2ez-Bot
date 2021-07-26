@@ -82,6 +82,12 @@ module.exports = {
                     reaction.users.remove(user.id);
                     if (!UserIDCount.has(user.id)) return;
 
+                    if (UserIDCount.has(user.id)) {
+
+                        iyes -1
+
+                    }
+
                     xno = xno + 1 * 1
 
                     const editsuggestion = new MessageEmbed()
