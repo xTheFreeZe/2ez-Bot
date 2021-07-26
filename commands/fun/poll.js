@@ -129,6 +129,9 @@ module.exports = {
                 });
 
                 crashcollector.on('collect', async (reaction, user) => {
+                    
+                    if (user.id === "830087071413567519") return;
+                    reaction.users.remove(user.id);
 
                     if (user.id !== message.author.id) {
 
