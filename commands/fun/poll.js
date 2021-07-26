@@ -4,6 +4,7 @@ const {
 
 const Discord = require('discord.js');
 const UserIDCount = new Set();
+const reactedwithno = new Set();
 
 
 module.exports = {
@@ -53,13 +54,11 @@ module.exports = {
                     if (user.id === "830087071413567519") return;
                     reaction.users.remove(user.id);
 
-/*
-                    if (!UserIDCount.has(user.id)) {
+                    if (reactedwithno.has(user.id)) {
 
-                        xno = xno - 1;
+                        xno = xno - 1
 
                     }
-                    */
 
                     if (UserIDCount.has(user.id)) return;
 
@@ -74,6 +73,7 @@ module.exports = {
                         .setColor('BLUE')
 
                     UserIDCount.add(user.id);
+                    reactedwithno.delete(user.id);
                     m.edit(editsuggestion);
 
 
@@ -102,12 +102,6 @@ module.exports = {
 
                     }
 
-                    if (!UserIDCount.has(user.id)) {
-
-                        xno = xno - 1
-
-                    }
-
                     xno = xno + 1 * 1
 
                     const editsuggestion = new MessageEmbed()
@@ -119,6 +113,7 @@ module.exports = {
                         .setColor('BLUE')
 
                     UserIDCount.delete(user.id);
+                    reactedwithno.add(user.id)
                     m.edit(editsuggestion);
 
 
