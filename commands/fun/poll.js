@@ -26,7 +26,7 @@ module.exports = {
             .setColor('BLUE')
 
 
-        message.channel.send(suggestion)
+        message.channel.send(suggestionembed)
             .then(m => {
                 m.react('✅');
                 m.react('❌');
@@ -56,6 +56,7 @@ module.exports = {
                         .addField('Yes', iyes)
                         .addField('No', xno)
                         .setTimestamp()
+                        .setColor('BLUE')
 
                     UserIDCount.add(user.id);
                     m.edit(editsuggestion);
@@ -81,7 +82,7 @@ module.exports = {
                     reaction.users.remove(user.id);
                     if (!UserIDCount.has(user.id)) return;
 
-                    xno = xno - 1 * 1
+                    xno = xno + 1 * 1
 
                     const editsuggestion = new MessageEmbed()
                         .setTitle(`New Poll`)
@@ -89,6 +90,7 @@ module.exports = {
                         .addField('Yes', iyes)
                         .addField('No', xno)
                         .setTimestamp()
+                        .setColor('BLUE')
 
                     UserIDCount.delete(user.id);
                     m.edit(editsuggestion);
