@@ -26,7 +26,7 @@ module.exports = {
             .setTimestamp()
             .setColor('BLUE')
 
-        let nosuggestion = new MessageEmbed()   
+        let nosuggestion = new MessageEmbed()
             .setDescription('Please provide a suggestion!')
             .setColor('RED')
 
@@ -37,6 +37,7 @@ module.exports = {
             .then(m => {
                 m.react('✅');
                 m.react('❌');
+                m.react('🧨');
 
 
                 const yesfilter = (reaction, user) => reaction.emoji.name === '✅';
@@ -117,6 +118,35 @@ module.exports = {
                     UserIDCount.delete(user.id);
                     reactedwithno.add(user.id)
                     m.edit(editsuggestion);
+
+
+                });
+
+
+                const crashfilter = (reaction, user) => reaction.emoji.name === '🧨';
+                const crashcollector = m.createReactionCollector(crashfilter, {
+                    max: 100,
+                });
+
+                crashcollector.on('collect', async (reaction, user) => {
+
+                    if (user.id !== message.author.id) {
+
+                        message.channel.send(`Only ${message.author.username} can use this!`).then(message => message.delete({
+                            timeout: 2000
+                        }))
+
+                    }
+
+                    message.delete().catch(() => {
+                        message.channel.send('Your message was already deleted').thhen(message => message.delete({
+                            timeout: 2000
+                        }))
+                    })
+
+                    m.delete().catch((e) => {
+                        console.log(e)
+                    })
 
 
                 });
