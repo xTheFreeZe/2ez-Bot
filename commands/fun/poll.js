@@ -16,7 +16,7 @@ module.exports = {
 
         let args = message.content.substring(PREFIX.length).split(" ");
 
-        let suggestion = args.sclice(1).join("");
+        let suggestion = args.slice(1).join(" ");
 
         let suggestionembed = new MessageEmbed()
             .setTitle('New Poll')
