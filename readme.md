@@ -1,5 +1,4 @@
 # 2ez Bot
-## _Official bot of 2ez_
 
 [![N|Solid](https://cdn.discordapp.com/icons/272733246792531968/a_d9533ac1614cf7f1c583485cbad9421a.png)](https://nodejs.org/en/)
 
