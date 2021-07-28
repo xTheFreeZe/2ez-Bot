@@ -28,7 +28,7 @@ The 2ez Bot uses a number of open source projects to work properly:
 
 > <span style="color:pink">2ez Bot is a open Source Discord Bot made my Marwin (Discord: Marwin#0001)</span> <br>
 > A part of the 2ez Community | The Bot is only being used on this Server! <br>
-> **Thanks for reading this and using the Bot!**
+> **Thanks for reading this and using the Bot :) !**
 
 
 
