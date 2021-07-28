@@ -137,20 +137,20 @@ module.exports = {
 
                         message.channel.send(`Only the creater of the poll, ${message.author.username}, can use this!`).then(message => message.delete({
                             timeout: 2000
-                        }))
+                        }));
 
                         return;
 
                     }
 
                     m.delete().catch((e) => {
-                        console.log(e)
+                        console.log('The message was aleady deleted!');
                     })
 
                     message.delete().catch(() => {
                         message.channel.send('Your message was already deleted').then(message => message.delete({
                             timeout: 2000
-                        }))
+                        }));
                     })
 
 
