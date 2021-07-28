@@ -61,7 +61,10 @@ module.exports = {
                     .setColor('RED')
                     .setFooter('Only OW Admins can ignore this!')
                     .setTimestamp()
-
+            
+                let AlradyhasRoleembed = new MessageEmbed()
+                    .setDescription(`${member.displayName} already has the ${roleName.name} role!`)
+                    .setColor('RED')
 
                 if (!member) return message.channel.send(nomember);
                 //if (args[0].length == 18) console.log('An ID was being used!');
@@ -69,7 +72,7 @@ module.exports = {
                 const alreadyHasRole = member._roles.includes(roleName.id);
                 //const authorroleCheck = message.author.roles.includes(roleName.id);
 
-                if (alreadyHasRole) return message.channel.send('User already has that role');
+                if (alreadyHasRole) return message.channel.send(AlradyhasRoleembed);
 
                 if (!OWAdmin) {
 

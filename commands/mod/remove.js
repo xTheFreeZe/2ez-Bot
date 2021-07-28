@@ -56,12 +56,16 @@ module.exports = {
                     .setColor('RED')
                     .setTimestamp()
 
+                let Doesnthaverole = new MessageEmbed()
+                    .setDescription(`${member.displayName} does not have the ${roleName.name} role!`)
+                    .setColor('RED')
+
                 if (!member) return message.channel.send(nomember);
                 //if (args[0].length == 18) console.log('An ID was being used!');
 
                 const alreadyHasRole = member._roles.includes(roleName.id);
 
-                if (!alreadyHasRole) return message.channel.send('This User does not have that Role!');
+                if (!alreadyHasRole) return message.channel.send(Doesnthaverole);
 
                 if (!OWAdmin) {
 
