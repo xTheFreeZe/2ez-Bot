@@ -135,9 +135,11 @@ module.exports = {
 
                     if (user.id !== message.author.id) {
 
-                        message.channel.send(`Only ${message.author.username} can use this!`).then(message => message.delete({
+                        message.channel.send(`Only the creater of the poll, ${message.author.username}, can use this!`).then(message => message.delete({
                             timeout: 2000
                         }))
+
+                        return;
 
                     }
 
@@ -146,7 +148,7 @@ module.exports = {
                     })
 
                     message.delete().catch(() => {
-                        message.channel.send('Your message was already deleted').thhen(message => message.delete({
+                        message.channel.send('Your message was already deleted').then(message => message.delete({
                             timeout: 2000
                         }))
                     })
