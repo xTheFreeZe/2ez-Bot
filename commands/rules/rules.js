@@ -14,8 +14,8 @@ module.exports = {
             .setDescription('`*send rules` , more following')
             .setColor('RANDOM')
             .setTimestamp()
-        
-        
+
+
         let ruleembeddesc = [
             "1) Disruptive behaviour is not tolerated. This includes (but is not limited to) spam, slurs, hate speech, harassment, insults, witch-hunting, and impersonation.",
             " ",
@@ -45,7 +45,6 @@ module.exports = {
             .setDescription(ruleembeddesc)
             .setColor('BLUE')
             .setThumbnail('https://cdn.discordapp.com/attachments/753238962050695228/813016413131243550/Rules.png')
-            .setTimestamp()
 
         if (!args[0]) {
 
