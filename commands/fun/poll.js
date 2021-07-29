@@ -70,6 +70,7 @@ module.exports = {
                         .setDescription(suggestion) // ${i}
                         .addField('Yes', iyes)
                         .addField('No', xno)
+                        .setFooter(`Suggestion from ${message.author.username}`)
                         .setTimestamp()
                         .setColor('BLUE')
 
@@ -112,6 +113,7 @@ module.exports = {
                         .setDescription(suggestion) // ${i}
                         .addField('Yes', iyes)
                         .addField('No', xno)
+                        .setFooter(`Suggestion from ${message.author.username}`)
                         .setTimestamp()
                         .setColor('BLUE')
 
